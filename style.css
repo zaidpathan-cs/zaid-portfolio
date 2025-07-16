@@ -1,92 +1,304 @@
-/* style.css */
-body {
-  background: #0e0e0e;
-  color: #e0e0e0;
-  font-family: 'Consolas', monospace;
-  margin: 0;
-  padding: 0;
+/* style.css - Cybersecurity Professional Theme */
+:root {
+  --cyber-primary: #0ff;
+  --cyber-secondary: #f0f;
+  --cyber-dark: #0e0e0e;
+  --cyber-darker: #080808;
+  --cyber-light: #e0e0e0;
+  --cyber-mid: #444;
+  --cyber-red: #ff3366;
+  --cyber-green: #33ff66;
+  --cyber-yellow: #ffcc33;
+  --cyber-blue: #3366ff;
 }
 
-header {
-  background: #111;
-  padding: 10px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Base Styles */
+body.cyber-theme {
+  background-color: var(--cyber-dark);
+  color: var(--cyber-light);
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+.cyber-header {
+  background-color: var(--cyber-darker);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--cyber-primary);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
 }
 
 .logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #0ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.cyber-glitch {
+  color: var(--cyber-primary);
+  position: relative;
+}
+
+.cyber-glitch::before, .cyber-glitch::after {
+  content: "ZAID";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cyber-glitch::before {
+  color: var(--cyber-secondary);
+  animation: glitch-effect 3s infinite;
+}
+
+.cyber-glitch::after {
+  color: var(--cyber-blue);
+  animation: glitch-effect 2s infinite reverse;
+}
+
+.cyber-underscore {
+  color: var(--cyber-primary);
+  animation: blink 1s step-end infinite;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
+  color: var(--cyber-light);
   text-decoration: none;
-  color: #ccc;
-  transition: color 0.3s;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
-.nav-links a:hover,
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyber-primary);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
 .nav-links a.active {
-  color: #0ff;
+  color: var(--cyber-primary);
 }
 
-.hero {
-  padding: 100px 30px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  color: #0ff;
-}
-
-.tagline {
-  font-size: 1.2em;
-  margin: 10px 0 30px;
-}
-
-.btn {
-  background: #0ff;
-  color: #000;
-  padding: 10px 20px;
-  text-decoration: none;
+/* Terminal Window */
+.terminal-window {
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid var(--cyber-primary);
   border-radius: 8px;
-  transition: background 0.3s;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  margin: 2rem auto;
+  max-width: 900px;
+  overflow: hidden;
 }
 
-.btn:hover {
-  background: #0cc;
+.terminal-header {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cyber-primary);
 }
 
-.content {
-  padding: 40px 30px;
-  max-width: 800px;
-  margin: auto;
+.terminal-buttons {
+  display: flex;
+  gap: 0.5rem;
 }
 
-ul.skill-list,
-ul.cert-list,
-ul.project-list {
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-btn.red { background: var(--cyber-red); }
+.terminal-btn.yellow { background: var(--cyber-yellow); }
+.terminal-btn.green { background: var(--cyber-green); }
+
+.terminal-title {
+  margin-left: 1rem;
+  color: var(--cyber-light);
+  font-size: 0.9rem;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+}
+
+.prompt {
+  color: var(--cyber-green);
+  margin-right: 0.5rem;
+}
+
+.terminal-line {
+  margin: 0.5rem 0;
+}
+
+.terminal-output {
+  color: var(--cyber-light);
+  margin: 0.5rem 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.blinking-cursor {
+  color: var(--cyber-primary);
+  animation: blink 1s step-end infinite;
+}
+
+/* Skill Categories */
+.skill-categories {
+  margin-top: 2rem;
+}
+
+.skill-category {
+  margin-bottom: 2.5rem;
+}
+
+.skill-category-title {
+  color: var(--cyber-primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cyber-mid);
+}
+
+.skill-category-title.red-team { color: var(--cyber-red); }
+.skill-category-title.blue-team { color: var(--cyber-blue); }
+.skill-category-title.tool { color: var(--cyber-yellow); }
+.skill-category-title.methodology { color: var(--cyber-secondary); }
+
+.skill-bars {
+  margin-top: 1.5rem;
+}
+
+.skill-bar {
+  margin-bottom: 1rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.skill-name {
+  color: var(--cyber-light);
+}
+
+.skill-level {
+  color: var(--cyber-primary);
+  font-size: 0.9rem;
+}
+
+.skill-progress {
+  height: 8px;
+  background: linear-gradient(to right, var(--cyber-primary), var(--cyber-green));
+  border-radius: 4px;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.skill-chip {
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--cyber-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--cyber-primary);
+  font-size: 0.9rem;
+}
+
+.methodology-list {
   list-style: none;
   padding-left: 0;
 }
 
-ul li {
-  margin-bottom: 10px;
+.methodology-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
-footer {
+.methodology-list li::before {
+  content: ">";
+  color: var(--cyber-primary);
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+.cyber-footer {
+  background: var(--cyber-darker);
+  padding: 2rem;
   text-align: center;
-  padding: 20px;
-  background: #111;
-  margin-top: 50px;
-  color: #666;
+  margin-top: 3rem;
+  border-top: 1px solid var(--cyber-primary);
+}
+
+.copyright {
+  color: var(--cyber-mid);
+  margin-top: 1rem;
+}
+
+.pgp {
+  color: var(--cyber-primary);
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glitch-effect {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .terminal-window {
+    margin: 1rem;
+  }
+  
+  .skill-chips {
+    gap: 0.5rem;
+  }
+  
+  .skill-chip {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+  }
 }
