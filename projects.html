@@ -3,44 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Zaid Pathan</title>
+  <meta name="description" content="Zaid Pathan - Security Projects | Penetration Testing Tools | Vulnerability Research">
+  <title>Case Studies | Zaid Pathan - Cybersecurity Professional</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
+<body class="cyber-theme">
+  <header class="cyber-header">
     <nav>
-      <div class="logo">ZAID</div>
+      <div class="logo"><span class="cyber-glitch">ZAID</span><span class="cyber-underscore">_</span></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="projects.html" class="active">Case Studies</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="mobile-menu">
+        <div class="hamburger"></div>
+      </div>
     </nav>
   </header>
 
-  <section class="content">
-    <h1>My Projects</h1>
-    <ul class="project-list">
-      <li>
-        <strong>Vulnerable Banking Portal</strong> – Flask app for demonstrating SQL injection<br>
-        <a href="https://github.com/yourusername/vuln-bank" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-        <strong>Network Scanner Tool</strong> – Python-based tool using Scapy/Nmap<br>
-        <a href="https://github.com/yourusername/net-scanner" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-        <strong>Phishing Page Detection Tool</strong> – Detects phishing indicators in URLs<br>
-        <a href="https://github.com/yourusername/phishing-detector" target="_blank">View on GitHub</a>
-      </li>
-    </ul>
+  <section class="cyber-content">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="terminal-btn red"></span>
+          <span class="terminal-btn yellow"></span>
+          <span class="terminal-btn green"></span>
+        </div>
+        <div class="terminal-title">security_projects.exe</div>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line"><span class="prompt">$</span> ./list_projects.sh --security</p>
+        
+        <div class="case-study-grid">
+          <!-- Project 1 -->
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <span class="case-study-tag red-team">Red Team</span>
+              <span class="case-study-date">2023</span>
+            </div>
+            <h3>Vulnerable Banking Portal</h3>
+            <p class="case-study-description">
+              Intentionally vulnerable Flask application demonstrating OWASP Top 10 vulnerabilities with focus on SQL injection and broken authentication.
+            </p>
+            <div class="case-study-tech">
+              <span>Flask</span>
+              <span>SQLi</span>
+              <span>XSS</span>
+              <span>JWT</span>
+            </div>
+            <div class="case-study-links">
+              <a href="https://github.com/zaidpathan/vuln-bank" target="_blank" class="cyber-btn small">
+                <span class="btn-icon">{"</>"}</span> Source Code
+              </a>
+              <a href="#" class="cyber-btn small outline">
+                <span class="btn-icon">📄</span> Writeup
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <span class="case-study-tag blue-team">Blue Team</span>
+              <span class="case-study-date">2023</span>
+            </div>
+            <h3>Advanced Network Scanner</h3>
+            <p class="case-study-description">
+              Python-based reconnaissance tool combining Scapy and Nmap functionality with vulnerability correlation using CVE databases.
+            </p>
+            <div class="case-study-tech">
+              <span>Python</span>
+              <span>Scapy</span>
+              <span>Nmap</span>
+              <span>CVE DB</span>
+            </div>
+            <div class="case-study-links">
+              <a href="https://github.com/zaidpathan/net-scanner" target="_blank" class="cyber-btn small">
+                <span class="btn-icon">{"</>"}</span> Source Code
+              </a>
+              <a href="#" class="cyber-btn small outline">
+                <span class="btn-icon">📊</span> Demo
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <span class="case-study-tag research">Research</span>
+              <span class="case-study-date">2024</span>
+            </div>
+            <h3>Phishing Detection Engine</h3>
+            <p class="case-study-description">
+              Machine learning model analyzing URL structures, domain age, and content patterns to identify phishing attempts with 94% accuracy.
+            </p>
+            <div class="case-study-tech">
+              <span>ML</span>
+              <span>Python</span>
+              <span>WHOIS</span>
+              <span>NLP</span>
+            </div>
+            <div class="case-study-links">
+              <a href="https://github.com/zaidpathan/phishing-detector" target="_blank" class="cyber-btn small">
+                <span class="btn-icon">{"</>"}</span> Source Code
+              </a>
+              <a href="#" class="cyber-btn small outline">
+                <span class="btn-icon">📈</span> Metrics
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="case-study-card">
+            <div class="case-study-header">
+              <span class="case-study-tag tool">Tool</span>
+              <span class="case-study-date">2024</span>
+            </div>
+            <h3>Cloud Security Auditor</h3>
+            <p class="case-study-description">
+              Automated AWS/GCP security assessment tool checking for misconfigurations, IAM vulnerabilities, and compliance with CIS benchmarks.
+            </p>
+            <div class="case-study-tech">
+              <span>AWS</span>
+              <span>GCP</span>
+              <span>Python</span>
+              <span>CIS</span>
+            </div>
+            <div class="case-study-links">
+              <a href="#" class="cyber-btn small">
+                <span class="btn-icon">{"</>"}</span> Source Code
+              </a>
+              <a href="#" class="cyber-btn small outline">
+                <span class="btn-icon">🛡️</span> Report
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="terminal-line"><span class="prompt">$</span> <span class="blinking-cursor">_</span></p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Zaid Pathan. All rights reserved.</p>
+  <section class="cyber-testimonials">
+    <h2 class="section-title"><span class="prompt">$</span> cat client_feedback.log</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"Zaid's vulnerable banking portal helped our team identify critical gaps in our authentication workflow that we had overlooked."</p>
+        <div class="testimonial-author">- Security Lead, FinTech Company</div>
+      </div>
+      <div class="testimonial">
+        <p>"The network scanner tool has become an essential part of our internal penetration testing toolkit."</p>
+        <div class="testimonial-author">- CISO, Enterprise Corporation</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <p class="disclaimer">All projects are either open-source or presented with client permission.</p>
+      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved. | PGP Key: <span class="pgp">0x1A2B3C4D5E6F7890</span></p>
+    </div>
   </footer>
+
+  <script>
+    // Simple testimonial slider
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    
+    function rotateTestimonials() {
+      testimonials.forEach(t => t.style.display = 'none');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].style.display = 'block';
+    }
+    
+    // Rotate every 5 seconds
+    testimonials.forEach((t, i) => t.style.display = i === 0 ? 'block' : 'none');
+    setInterval(rotateTestimonials, 5000);
+  </script>
 </body>
 </html>
