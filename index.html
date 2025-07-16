@@ -1,39 +1,123 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zaid Pathan | Cybersecurity Specialist</title>
+  <meta name="description" content="Zaid Pathan - Cybersecurity Specialist | Ethical Hacker | Penetration Tester">
+  <title>Zaid Pathan | Cybersecurity Specialist & Ethical Hacker</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
+<body class="cyber-theme">
+  <header class="cyber-header">
     <nav>
-      <div class="logo">ZAID</div>
+      <div class="logo"><span class="cyber-glitch">ZAID</span><span class="cyber-underscore">_</span></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Case Studies</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="mobile-menu">
+        <div class="hamburger"></div>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Hi, I'm <span class="highlight">Zaid Pathan</span></h1>
-    <p class="tagline">Professional Cybersecurity Specialist & Penetration Tester</p>
-    <div class="social-links">
-      <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+  <section class="cyber-hero">
+    <div class="matrix-fall"></div>
+    <div class="hero-content">
+      <h1 class="cyber-title">
+        <span class="prompt">$</span> echo "<span class="highlight">Zaid Pathan</span>"<br>
+        <span class="typewriter" data-text="Cybersecurity Specialist | Ethical Hacker | Red Team Operator"></span><span class="blinking-cursor">_</span>
+      </h1>
+      
+      <div class="terminal-window compact">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn red"></span>
+            <span class="terminal-btn yellow"></span>
+            <span class="terminal-btn green"></span>
+          </div>
+          <div class="terminal-title">status_check.exe</div>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span class="prompt">$</span> ./security_assessment.sh</p>
+          <p class="terminal-output">
+            > Current Focus: <span class="highlight">Penetration Testing</span><br>
+            > Specialization: <span class="highlight">Web App Security</span><br>
+            > Available For: <span class="highlight">Security Consultations</span>
+          </p>
+          <p class="terminal-line"><span class="prompt">$</span> <span class="blinking-cursor">_</span></p>
+        </div>
+      </div>
+      
+      <div class="cyber-cta">
+        <a href="contact.html" class="cyber-btn">
+          <span class="btn-text">initiate_contact</span>
+          <span class="btn-loader"></span>
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/zaidpathan" target="_blank" rel="noopener noreferrer" class="social-icon github">GitHub</a>
+          <a href="https://linkedin.com/in/zaidpathan" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">LinkedIn</a>
+          <a href="https://hackerone.com/zaidpathan" target="_blank" rel="noopener noreferrer" class="social-icon hackerone">HackerOne</a>
+          <a href="#" class="social-icon pgp" title="PGP Key: 0x1A2B3C4D5E6F7890">PGP</a>
+        </div>
+      </div>
     </div>
-    <a href="contact.html" class="btn">Hire Me</a>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Zaid Pathan. All rights reserved.</p>
+  <section class="cyber-features">
+    <h2 class="section-title"><span class="prompt">$</span> cat services.txt</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Penetration Testing</h3>
+        <p>Comprehensive security assessments simulating real-world attacks to identify vulnerabilities before malicious actors do.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Vulnerability Research</h3>
+        <p>Proactive discovery and analysis of security flaws in software, networks, and systems.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>Red Teaming</h3>
+        <p>Full-scope adversarial simulations to test organizational defenses and response capabilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved.</p>
+      <p class="security-statement">
+        <span class="lock-icon">🔒</span> This site uses HTTPS | No tracking | No cookies
+      </p>
+    </div>
   </footer>
+
+  <script>
+    // Simple typewriter effect for the hero section
+    document.addEventListener('DOMContentLoaded', function() {
+      const typewriter = document.querySelector('.typewriter');
+      const text = typewriter.getAttribute('data-text');
+      let i = 0;
+      
+      function type() {
+        if (i < text.length) {
+          typewriter.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, Math.random() * 100 + 50);
+        }
+      }
+      
+      setTimeout(type, 1000);
+    });
+  </script>
 </body>
 </html>
