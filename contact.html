@@ -3,36 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Zaid Pathan</title>
+  <meta name="description" content="Contact Zaid Pathan - Cybersecurity Specialist | Ethical Hacker | Penetration Tester">
+  <title>Contact | Zaid Pathan - Cybersecurity Professional</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
+<body class="cyber-theme">
+  <header class="cyber-header">
     <nav>
-      <div class="logo">ZAID</div>
+      <div class="logo"><span class="cyber-glitch">ZAID</span><span class="cyber-underscore">_</span></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="skills.html">Skills</a></li>
         <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html">Case Studies</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+      <div class="mobile-menu">
+        <div class="hamburger"></div>
+      </div>
     </nav>
   </header>
 
-  <section class="content">
-    <h1>Contact Me</h1>
-    <p>You can reach me on:</p>
-    <ul>
-      <li>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
-    </ul>
+  <section class="cyber-content">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="terminal-btn red"></span>
+          <span class="terminal-btn yellow"></span>
+          <span class="terminal-btn green"></span>
+        </div>
+        <div class="terminal-title">secure_contact.exe</div>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line"><span class="prompt">$</span> ./initiate_contact.sh</p>
+        <p class="terminal-output">Establishing secure channel...</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Encrypted Email</h3>
+            <p class="contact-detail">zaid@securemail.example</p>
+            <a href="#" class="cyber-btn small">Show PGP Key</a>
+            <div class="pgp-key" style="display:none;">
+              <p>-----BEGIN PGP PUBLIC KEY BLOCK-----</p>
+              <p>mQINBF2z8xYBEAD...</p>
+              <p>-----END PGP PUBLIC KEY BLOCK-----</p>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">🔐</div>
+            <h3>Secure Platforms</h3>
+            <ul class="secure-links">
+              <li><a href="https://keybase.io/zaidpathan" target="_blank">Keybase</a></li>
+              <li><a href="https://hackerone.com/zaidpathan" target="_blank">HackerOne</a></li>
+              <li><a href="https://signal.me/#p/+1234567890" target="_blank">Signal</a></li>
+            </ul>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">🌐</div>
+            <h3>Professional Networks</h3>
+            <ul class="professional-links">
+              <li><a href="https://linkedin.com/in/zaidpathan" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/zaidpathan" target="_blank">GitHub</a></li>
+              <li><a href="https://twitter.com/zaidpathan" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <p class="terminal-line"><span class="prompt">$</span> send_secure_message</p>
+          <form id="secureContactForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" class="cyber-input" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" class="cyber-input" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <select id="subject" name="subject" class="cyber-select">
+                <option value="consultation">Security Consultation</option>
+                <option value="pentest">Penetration Testing Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" class="cyber-textarea" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cyber-btn">
+              <span class="btn-text">Encrypt & Send</span>
+              <span class="btn-loader"></span>
+            </button>
+          </form>
+        </div>
+        
+        <p class="terminal-line"><span class="prompt">$</span> <span class="blinking-cursor">_</span></p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Zaid Pathan. All rights reserved.</p>
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <p class="security-disclaimer">All communications are treated with strict confidentiality.</p>
+      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved. | PGP Fingerprint: <span class="pgp">1A2B 3C4D 5E6F 7890</span></p>
+    </div>
   </footer>
+
+  <script>
+    // Toggle PGP key visibility
+    document.querySelector('.cyber-btn.small').addEventListener('click', function(e) {
+      e.preventDefault();
+      const pgpKey = document.querySelector('.pgp-key');
+      if (pgpKey.style.display === 'none') {
+        pgpKey.style.display = 'block';
+        this.textContent = 'Hide PGP Key';
+      } else {
+        pgpKey.style.display = 'none';
+        this.textContent = 'Show PGP Key';
+      }
+    });
+
+    // Form submission handling
+    document.getElementById('secureContactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const loader = submitBtn.querySelector('.btn-loader');
+      
+      btnText.textContent = 'Encrypting...';
+      loader.style.display = 'inline-block';
+      
+      // Simulate encryption delay
+      setTimeout(() => {
+        btnText.textContent = 'Message Sent';
+        loader.style.display = 'none';
+        alert('Secure message transmitted successfully!');
+        this.reset();
+        setTimeout(() => {
+          btnText.textContent = 'Encrypt & Send';
+        }, 2000);
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
