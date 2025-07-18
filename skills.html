@@ -1,171 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Zaid Pathan - Cybersecurity Skills | Penetration Testing | Ethical Hacking | Security Automation">
-  <title>Skills | Zaid Pathan - Cybersecurity Professional</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Zaid Pathan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0b0b0f;
+      color: #e8e8f0;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #070709;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      color: #00ff99;
+    }
+
+    nav {
+      background-color: #070709;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #222226;
+    }
+
+    nav a {
+      color: #00ccff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #cc33ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #111116;
+      border: 1px solid #222226;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+    }
+
+    h2 {
+      color: #00ff99;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #1a1a1f;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-left: 5px solid #00ccff;
+      color: #c2f5e9;
+    }
+
+    footer {
+      border-top: 1px solid #222226;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body class="cyber-theme">
-  <header class="cyber-header">
-    <nav>
-      <div class="logo"><span class="cyber-glitch">ZAID</span><span class="cyber-underscore">_</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html" class="active">Skills</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html">Case Studies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="mobile-menu">
-        <div class="hamburger"></div>
-      </div>
-    </nav>
+<body>
+  <header>
+    <h1>Skills</h1>
   </header>
 
-  <section class="cyber-content">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <span class="terminal-btn red"></span>
-          <span class="terminal-btn yellow"></span>
-          <span class="terminal-btn green"></span>
-        </div>
-        <div class="terminal-title">skills_assessment.exe</div>
-      </div>
-      <div class="terminal-body">
-        <p class="terminal-line"><span class="prompt">$</span> ./analyze_skills.sh --security</p>
-        
-        <div class="skill-categories">
-          <!-- Offensive Security -->
-          <div class="skill-category">
-            <h3 class="skill-category-title red-team">Offensive Security</h3>
-            <div class="skill-bars">
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Penetration Testing</span>
-                  <span class="skill-level">Expert</span>
-                </div>
-                <div class="skill-progress" style="width: 95%"></div>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Web App Security</span>
-                  <span class="skill-level">Expert</span>
-                </div>
-                <div class="skill-progress" style="width: 90%"></div>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Red Teaming</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Exploit Development</span>
-                  <span class="skill-level">Intermediate</span>
-                </div>
-                <div class="skill-progress" style="width: 75%"></div>
-              </div>
-            </div>
-          </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html" class="active">Skills</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-          <!-- Defensive Security -->
-          <div class="skill-category">
-            <h3 class="skill-category-title blue-team">Defensive Security</h3>
-            <div class="skill-bars">
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">SIEM Analysis</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Incident Response</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-progress" style="width: 80%"></div>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-info">
-                  <span class="skill-name">Firewall Configuration</span>
-                  <span class="skill-level">Expert</span>
-                </div>
-                <div class="skill-progress" style="width: 90%"></div>
-              </div>
-            </div>
-          </div>
+  <main>
+    <h2>My Cyber Arsenal</h2>
+    <p>Armed with a deep understanding of offensive tactics and an insatiable curiosity, I bring together technical expertise and hacker intuition. Here’s a breakdown of the cyber tools and techniques I wield with precision:</p>
 
-          <!-- Tools & Technologies -->
-          <div class="skill-category">
-            <h3 class="skill-category-title tool">Tools & Technologies</h3>
-            <div class="skill-chips">
-              <div class="skill-chip">Metasploit Framework</div>
-              <div class="skill-chip">Burp Suite Pro</div>
-              <div class="skill-chip">Nmap</div>
-              <div class="skill-chip">Wireshark</div>
-              <div class="skill-chip">Python</div>
-              <div class="skill-chip">Bash/PowerShell</div>
-              <div class="skill-chip">Nessus</div>
-              <div class="skill-chip">C2 Frameworks</div>
-              <div class="skill-chip">OSINT Tools</div>
-              <div class="skill-chip">Cloud Security Tools</div>
-            </div>
-          </div>
+    <h3>🛡️ Offensive & Defensive Tactics</h3>
+    <ul>
+      <li>Full-stack Web Application Penetration Testing (OWASP Top 10)</li>
+      <li>Red Teaming & Exploit Crafting (Buffer Overflow, Shellcode)</li>
+      <li>Network Reconnaissance & Threat Mapping</li>
+      <li>Client-side & Server-side Vulnerability Assessment</li>
+      <li>Custom Phishing Simulation Campaigns</li>
+    </ul>
 
-          <!-- Methodologies -->
-          <div class="skill-category">
-            <h3 class="skill-category-title methodology">Methodologies</h3>
-            <ul class="methodology-list">
-              <li>MITRE ATT&CK Framework</li>
-              <li>OWASP Testing Guide</li>
-              <li>NIST Cybersecurity Framework</li>
-              <li>PTES (Penetration Testing Execution Standard)</li>
-              <li>Cyber Kill Chain</li>
-            </ul>
-          </div>
-        </div>
+    <h3>🔍 Tools of the Trade</h3>
+    <ul>
+      <li>Burp Suite Pro, Metasploit Framework, Nmap, Nikto</li>
+      <li>Wireshark for Deep Packet Inspection</li>
+      <li>Hydra, Crunch for Brute Force Attacks</li>
+      <li>SQLMap, JohnTheRipper, Dirbuster, and more</li>
+    </ul>
 
-        <p class="terminal-line"><span class="prompt">$</span> <span class="blinking-cursor">_</span></p>
-      </div>
-    </div>
-  </section>
+    <h3>🧠 Scripting & Automation</h3>
+    <ul>
+      <li>Python for payload scripting & tool development</li>
+      <li>Bash for automation in Unix-based environments</li>
+      <li>Writing custom exploits & reverse shells</li>
+    </ul>
 
-  <section class="cyber-proficiency">
-    <h2 class="section-title"><span class="prompt">$</span> cat proficiency_matrix.txt</h2>
-    <div class="proficiency-grid">
-      <div class="proficiency-item">
-        <div class="proficiency-metric" style="--rating: 4.8">4.8/5</div>
-        <h3>Technical Report Writing</h3>
-        <p>Clear documentation of vulnerabilities, risks, and remediation strategies</p>
-      </div>
-      <div class="proficiency-item">
-        <div class="proficiency-metric" style="--rating: 4.5">4.5/5</div>
-        <h3>Client Communication</h3>
-        <p>Translating technical findings for executive stakeholders</p>
-      </div>
-      <div class="proficiency-item">
-        <div class="proficiency-metric" style="--rating: 4.9">4.9/5</div>
-        <h3>Security Research</h3>
-        <p>Staying current with emerging threats and vulnerabilities</p>
-      </div>
-    </div>
-  </section>
+    <h3>💡 Soft Skills</h3>
+    <ul>
+      <li>Sharp analytical mind with a love for puzzles</li>
+      <li>Excellent communication & documentation</li>
+      <li>Team-driven mindset with ethical awareness</li>
+      <li>Continuous learner with a proactive attitude</li>
+    </ul>
+  </main>
 
-  <footer class="cyber-footer">
-    <div class="footer-content">
-      <p class="skills-footnote">Skills assessment based on real-world engagements and client feedback</p>
-      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved. | PGP Key: <span class="pgp">0x1A2B3C4D5E6F7890</span></p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p>
   </footer>
 </body>
 </html>
