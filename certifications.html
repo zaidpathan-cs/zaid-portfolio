@@ -1,129 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Zaid Pathan - Cybersecurity Certifications | CEH | OSCP | Security+">
-  <title>Certifications | Zaid Pathan - Cybersecurity Professional</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | Zaid Pathan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0b0b0f;
+      color: #e8e8f0;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #070709;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      color: #00ff99;
+    }
+
+    nav {
+      background-color: #070709;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #222226;
+    }
+
+    nav a {
+      color: #00ccff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #cc33ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #111116;
+      border: 1px solid #222226;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+    }
+
+    h2 {
+      color: #00ff99;
+      margin-bottom: 1rem;
+    }
+
+    .cert-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cert-list li {
+      background: #1a1a1f;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-left: 4px solid #00ccff;
+      color: #d0f0e8;
+    }
+
+    .cert-list li i {
+      margin-right: 0.5rem;
+      color: #cc33ff;
+    }
+
+    footer {
+      border-top: 1px solid #222226;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body class="cyber-theme">
-  <header class="cyber-header">
-    <nav>
-      <div class="logo"><span class="cyber-glitch">ZAID</span><span class="cyber-underscore">_</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="certifications.html" class="active">Certifications</a></li>
-        <li><a href="projects.html">Case Studies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="mobile-menu">
-        <div class="hamburger"></div>
-      </div>
-    </nav>
+<body>
+  <header>
+    <h1>Certifications</h1>
   </header>
 
-  <section class="cyber-content">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <span class="terminal-btn red"></span>
-          <span class="terminal-btn yellow"></span>
-          <span class="terminal-btn green"></span>
-        </div>
-        <div class="terminal-title">verify_certs.exe</div>
-      </div>
-      <div class="terminal-body">
-        <p class="terminal-line"><span class="prompt">$</span> ./list_certifications.sh --verified</p>
-        
-        <div class="cert-grid">
-          <div class="cert-card">
-            <div class="cert-badge oscp">OSCP</div>
-            <h3>Offensive Security Certified Professional</h3>
-            <p class="cert-org">Offensive Security</p>
-            <p class="cert-date">Earned: 2023 | ID: OS-123-456</p>
-            <a href="#" class="cert-verify" target="_blank">Verify Credential</a>
-          </div>
-          
-          <div class="cert-card">
-            <div class="cert-badge ceh">CEH</div>
-            <h3>Certified Ethical Hacker</h3>
-            <p class="cert-org">EC-Council</p>
-            <p class="cert-date">Earned: 2022 | ID: ECC123456789</p>
-            <a href="#" class="cert-verify" target="_blank">Verify Credential</a>
-          </div>
-          
-          <div class="cert-card">
-            <div class="cert-badge comptia">Sec+</div>
-            <h3>CompTIA Security+</h3>
-            <p class="cert-org">CompTIA</p>
-            <p class="cert-date">Earned: 2021 | ID: COMP00102345</p>
-            <a href="#" class="cert-verify" target="_blank">Verify Credential</a>
-          </div>
-          
-          <div class="cert-card">
-            <div class="cert-badge cisco">CCNA</div>
-            <h3>Cisco Certified CyberOps Associate</h3>
-            <p class="cert-org">Cisco</p>
-            <p class="cert-date">Earned: 2020 | ID: CSCO12345678</p>
-            <a href="#" class="cert-verify" target="_blank">Verify Credential</a>
-          </div>
-          
-          <div class="cert-card">
-            <div class="cert-badge icac">ICAC</div>
-            <h3>ICAC Penetration Tester</h3>
-            <p class="cert-org">International CyberSecurity Institute</p>
-            <p class="cert-date">Earned: 2021 | ID: ICAC789456</p>
-            <a href="#" class="cert-verify" target="_blank">Verify Credential</a>
-          </div>
-        </div>
-        
-        <p class="terminal-line"><span class="prompt">$</span> <span class="blinking-cursor">_</span></p>
-      </div>
-    </div>
-  </section>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="certifications.html" class="active">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <section class="cyber-achievements">
-    <h2 class="section-title"><span class="prompt">$</span> cat training_logs.txt</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">2023</div>
-        <div class="timeline-content">
-          <h3>OSCP Certification</h3>
-          <p>Completed 60+ hour lab environment penetration testing, successfully exploited 30+ machines, and submitted comprehensive report.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2022</div>
-        <div class="timeline-content">
-          <h3>CEH Practical Challenge</h3>
-          <p>Demonstrated ethical hacking techniques across 20 different scenarios with 95% success rate.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2021</div>
-        <div class="timeline-content">
-          <h3>Security+ Continuing Education</h3>
-          <p>Maintained certification through 50+ CEUs in advanced network security and threat analysis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h2>Validated Credentials & Mastery</h2>
+    <ul class="cert-list">
+      <li><i class="fas fa-certificate"></i>ICAC Certified Penetration Tester (ICPT)</li>
+      <li><i class="fas fa-certificate"></i>Certified Ethical Hacker (CEH)</li>
+      <li><i class="fas fa-certificate"></i>CompTIA Security+ (SY0-601)</li>
+      <li><i class="fas fa-certificate"></i>Offensive Security Wireless Professional (OSWP)</li>
+      <li><i class="fas fa-certificate"></i>TryHackMe – Cyber Defence Path Completion</li>
+      <li><i class="fas fa-certificate"></i>Hack The Box – Pro Labs Explorer</li>
+    </ul>
+  </main>
 
-  <footer class="cyber-footer">
-    <div class="footer-content">
-      <p>Security verification:</p>
-      <div class="verification-links">
-        <a href="https://www.credly.com/users/zaidpathan/badges" target="_blank" rel="noopener noreferrer">Credly Profile</a>
-        <a href="https://www.youracclaim.com/users/zaidpathan" target="_blank" rel="noopener noreferrer">Acclaim</a>
-      </div>
-      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved. | PGP Key: <span class="pgp">0x1A2B3C4D5E6F7890</span></p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p>
   </footer>
 </body>
 </html>
