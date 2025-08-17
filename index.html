@@ -1,395 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zaid Pathan - Cybersecurity Specialist | Penetration Tester | Ethical Hacker">
-    <title>Zaid Pathan | Offensive Security Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --cyber-dark: #0b0b0f;
-            --cyber-darker: #070709;
-            --cyber-primary: #00ff99;
-            --cyber-secondary: #cc33ff;
-            --cyber-accent: #00ccff;
-            --cyber-text: #e8e8f0;
-            --cyber-light: #b0fcd3;
-            --cyber-mid: #2f3e3e;
-            --cyber-card: #111116;
-            --cyber-border: #222226;
-            --cyber-success: #00ff99;
-            --cyber-warning: #ffcc00;
-            --cyber-danger: #ff3366;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zaid Pathan - Cybersecurity Specialist | Penetration Tester | Ethical Hacker">
+  <title>Zaid Pathan | Offensive Security Specialist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-white: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --accent: #0ea5e9;
+      --border-light: #e5e7eb;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', 'Consolas', monospace;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-        body {
-            background-color: var(--cyber-dark);
-            color: var(--cyber-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
 
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-bottom: 1rem;
-        }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.8rem; color: var(--primary); }
+    h2 { font-size: 2.2rem; color: var(--accent); }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.2rem; }
 
-        h1 { font-size: 2.8rem; color: var(--cyber-primary); }
-        h2 { font-size: 2.2rem; color: var(--cyber-accent); }
-        h3 { font-size: 1.6rem; color: var(--cyber-light); }
-        h4 { font-size: 1.2rem; color: var(--cyber-light); }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    a:hover { color: var(--primary-dark); }
 
-        a {
-            color: var(--cyber-primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px var(--card-shadow);
+    }
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
 
-        a:hover {
-            color: var(--cyber-secondary);
-        }
+    header {
+      background: var(--bg-white);
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 10px var(--card-shadow);
+    }
 
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--cyber-primary), var(--cyber-accent));
-            color: var(--cyber-dark);
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 255, 153, 0.5);
-        }
+    .tagline {
+      font-size: 1.3rem;
+      margin: 1rem 0 2rem;
+      color: var(--text-muted);
+    }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--cyber-primary);
-            border: 1px solid var(--cyber-primary);
-            box-shadow: none;
-        }
+    .terminal {
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 1.8rem;
+      margin: 2rem auto 0;
+      max-width: 700px;
+      text-align: left;
+      box-shadow: 0 6px 20px var(--card-shadow);
+    }
 
-        .btn-outline:hover {
-            background: rgba(0, 255, 153, 0.1);
-        }
+    .terminal span.prompt { color: var(--primary-dark); font-weight: 700; }
+    .terminal span.command { color: var(--primary); }
+    .terminal span.output { color: var(--text-muted); }
 
-        header {
-            background: linear-gradient(135deg, var(--cyber-darker), #0f0f1f);
-            text-align: center;
-            padding: 8rem 1rem 6rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid var(--cyber-border);
-        }
+    nav {
+      background: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px var(--card-shadow);
+    }
 
-        .header-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
 
-        .tagline {
-            font-size: 1.3rem;
-            margin: 1rem 0 2rem;
-            color: var(--cyber-light);
-            opacity: 0.9;
-        }
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
 
-        .terminal {
-            background: rgba(11, 11, 15, 0.8);
-            border: 1px solid var(--cyber-primary);
-            border-radius: 8px;
-            padding: 1.8rem;
-            margin: 2rem auto 0;
-            max-width: 700px;
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-        }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        .terminal span.prompt {
-            color: var(--cyber-secondary);
-            font-weight: 700;
-        }
+    .nav-links a {
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
 
-        .terminal span.command {
-            color: var(--cyber-primary);
-        }
+    section {
+      padding: 6rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .terminal span.output {
-            color: var(--cyber-light);
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+      margin: 1.5rem auto 0;
+      border-radius: 3px;
+    }
 
-        nav {
-            background-color: var(--cyber-darker);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--cyber-border);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-        }
+    footer {
+      background: var(--bg-white);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 2.5rem;
+      border-top: 1px solid var(--border-light);
+      box-shadow: 0 -2px 8px var(--card-shadow);
+    }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 1rem;
-        }
+    .footer-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: var(--primary); }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: var(--cyber-primary);
-            letter-spacing: -1px;
-            position: relative;
-        }
-
-        .logo::after {
-            content: '_';
-            animation: blink 1s step-end infinite;
-            color: var(--cyber-accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-        }
-
-        .nav-links a {
-            color: var(--cyber-light);
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--cyber-accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        section {
-            padding: 6rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--cyber-primary), var(--cyber-accent));
-            margin: 1.5rem auto 0;
-            border-radius: 3px;
-        }
-
-        footer {
-            background: var(--cyber-darker);
-            color: var(--cyber-light);
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid var(--cyber-border);
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--cyber-light);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--cyber-primary);
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            
-            header {
-                padding: 6rem 1rem 4rem;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            section {
-                padding: 4rem 1rem;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      header { padding: 4rem 1rem 3rem; }
+      h1 { font-size: 2.2rem; }
+      .tagline { font-size: 1.1rem; }
+      section { padding: 4rem 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Zaid Pathan</h1>
-            <p class="tagline">Offensive Security Specialist | Penetration Tester</p>
-            <div class="terminal">
-                <p><span class="prompt">root@kali:~#</span> <span class="command">whoami</span></p>
-                <p><span class="output">zaid_pathan:cybersecurity_specialist:penetration_tester</span></p>
-                <br>
-                <p><span class="prompt">root@kali:~#</span> <span class="command">cat specialty.txt</span></p>
-                <p><span class="output">Web App Security | Network Pentesting | Vulnerability Research </span></p>
-            </div>
-        </div>
-    </header>
-  
-    <nav>
-        <div class="nav-container">
-            <div class="logo">ZAID_PATHAN</div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="projects.html">Case Studies</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <header>
+    <div class="header-content">
+      <h1>Zaid Pathan</h1>
+      <p class="tagline">Offensive Security Specialist | Penetration Tester</p>
+      <div class="terminal">
+        <p><span class="prompt">root@kali:~#</span> <span class="command">whoami</span></p>
+        <p><span class="output">zaid_pathan:cybersecurity_specialist:penetration_tester</span></p>
+        <br>
+        <p><span class="prompt">root@kali:~#</span> <span class="command">cat specialty.txt</span></p>
+        <p><span class="output">Web App Security | Network Pentesting | Vulnerability Research </span></p>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <!-- Your content sections will go here -->
-        <!-- Example section (you'll add your actual content) -->
-        <section id="about">
-            <h2 class="section-title">Professional Profile</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p>Cybersecurity professional with expertise in penetration testing, vulnerability assessment, and security architecture. Penetration Tester with a proven track record of identifying and mitigating security risks for enterprise organizations.</p>
-                <a href="#" class="btn" style="margin-top: 2rem;">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-            </div>
-        </section>
-    </main>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">ZAID_PATHAN</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="projects.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 Zaid Pathan | Offensive Security Specialist</p>
-            <div class="footer-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">PGP Key</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Responsible Disclosure</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Legal</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
+  <main>
+    <section id="about">
+      <h2 class="section-title">Professional Profile</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p>Cybersecurity professional with expertise in penetration testing, vulnerability assessment, and security architecture. Penetration Tester with a proven track record of identifying and mitigating security risks for enterprise organizations.</p>
+        <a href="#" class="btn" style="margin-top: 2rem;">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active link
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
+  <footer>
+    <p>© 2025 Zaid Pathan | Offensive Security Specialist</p>
+    <div class="footer-links">
+      <a href="#">PGP Key</a>
+      <a href="#">Responsible Disclosure</a>
+      <a href="#">Legal</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
 
-        // Simple terminal typing effect
-        const terminalLines = [
-            { text: "nmap -sV -sC -O -p- 192.168.1.1", delay: 100 },
-            { text: "Starting Nmap 7.93 ( https://nmap.org )", delay: 50 },
-            { text: "Nmap scan report for target.local (192.168.1.1)", delay: 50 },
-            { text: "Host is up (0.045s latency).", delay: 50 }
-        ];
-
-        function typeTerminal() {
-            const terminal = document.querySelector('.terminal');
-            let delay = 2000;
-            
-            terminalLines.forEach(line => {
-                setTimeout(() => {
-                    const p = document.createElement('p');
-                    p.innerHTML = `<span class="output">${line.text}</span>`;
-                    terminal.appendChild(p);
-                    terminal.scrollTop = terminal.scrollHeight;
-                }, delay);
-                delay += line.delay;
-            });
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if(this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
         }
+      });
+    });
 
-        // Start typing effect after page loads
-        window.addEventListener('load', () => {
-            setTimeout(typeTerminal, 1000);
-        });
-    </script>
+    // Terminal typing effect
+    const terminalLines = [
+      { text: "nmap -sV -sC -O -p- 192.168.1.1", delay: 100 },
+      { text: "Starting Nmap 7.93 ( https://nmap.org )", delay: 50 },
+      { text: "Nmap scan report for target.local (192.168.1.1)", delay: 50 },
+      { text: "Host is up (0.045s latency).", delay: 50 }
+    ];
+    function typeTerminal() {
+      const terminal = document.querySelector('.terminal');
+      let delay = 2000;
+      terminalLines.forEach(line => {
+        setTimeout(() => {
+          const p = document.createElement('p');
+          p.innerHTML = `<span class="output">${line.text}</span>`;
+          terminal.appendChild(p);
+          terminal.scrollTop = terminal.scrollHeight;
+        }, delay);
+        delay += line.delay;
+      });
+    }
+    window.addEventListener('load', () => { setTimeout(typeTerminal, 1000); });
+  </script>
 </body>
 </html>
