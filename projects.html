@@ -8,88 +8,105 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background-color: #0b0b0f;
-      color: #e8e8f0;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: #f9f9f9;
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
     }
 
     header, footer {
-      background-color: #070709;
+      background-color: #ffffff;
       text-align: center;
       padding: 2rem 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     header h1 {
-      color: #00ff99;
+      color: #0077cc;
+      margin: 0;
     }
 
     nav {
-      background-color: #070709;
+      background-color: #ffffff;
       padding: 1rem;
       text-align: center;
-      border-bottom: 1px solid #222226;
+      border-bottom: 1px solid #ddd;
     }
 
     nav a {
-      color: #00ccff;
+      color: #0077cc;
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #cc33ff;
+    nav a:hover,
+    nav a.active {
+      color: #ff6600;
     }
 
     main {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
-      background-color: #111116;
-      border: 1px solid #222226;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
-      color: #00ff99;
-      margin-bottom: 1rem;
+      color: #0077cc;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .project {
-      background: #1a1a1f;
-      padding: 1rem;
+      background: #f1faff;
+      padding: 1.2rem;
       margin-bottom: 1.5rem;
-      border-left: 5px solid #00ccff;
-      color: #d0f0e8;
+      border-left: 5px solid #0077cc;
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateX(5px);
     }
 
     .project h3 {
-      color: #cc33ff;
+      color: #ff6600;
       margin: 0 0 0.5rem;
     }
 
+    .project p {
+      margin: 0.5rem 0;
+    }
+
     .project a {
-      color: #00ccff;
-      text-decoration: underline;
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     .project a:hover {
-      color: #ff00ff;
+      text-decoration: underline;
+      color: #ff6600;
     }
 
     footer {
-      border-top: 1px solid #222226;
-      color: #888;
+      border-top: 1px solid #ddd;
+      color: #666;
       font-size: 0.9rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Cybersecurity Project</h1>
+    <h1>Cybersecurity Projects</h1>
   </header>
 
   <nav>
@@ -97,7 +114,7 @@
     <a href="about.html">About</a>
     <a href="skills.html">Skills</a>
     <a href="certifications.html">Certifications</a>
-    <a href="projects.html" class="active">Project</a>
+    <a href="projects.html" class="active">Projects</a>
     <a href="contact.html">Contact</a>
   </nav>
 
@@ -110,6 +127,17 @@
       <p><a href="#">View Code</a></p>
     </div>
 
+    <div class="project">
+      <h3>🛡️ Red Team Simulation</h3>
+      <p>Conducted a red team exercise to evaluate enterprise-level defense readiness, including phishing simulations, privilege escalation, and lateral movement.</p>
+      <p><a href="#">Read Report</a></p>
+    </div>
+
+    <div class="project">
+      <h3>📊 Vulnerability Management Dashboard</h3>
+      <p>Developed a custom dashboard in Python and Flask to visualize vulnerabilities, prioritize risks, and automate patch reporting for system administrators.</p>
+      <p><a href="#">View Demo</a></p>
+    </div>
   </main>
 
   <footer>
