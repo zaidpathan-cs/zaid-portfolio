@@ -7,54 +7,61 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Light Theme */
     body {
-      background-color: #0b0b0f;
-      color: #e8e8f0;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: #f9fafb;
+      color: #1f2937;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
     }
 
     header, footer {
-      background-color: #070709;
+      background-color: #ffffff;
       text-align: center;
       padding: 2rem 1rem;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     header h1 {
-      color: #00ff99;
+      color: #2563eb;
+      font-weight: 700;
     }
 
     nav {
-      background-color: #070709;
+      background-color: #ffffff;
       padding: 1rem;
       text-align: center;
-      border-bottom: 1px solid #222226;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
-      color: #00ccff;
+      color: #374151;
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #cc33ff;
+    nav a:hover, nav a.active {
+      color: #2563eb;
     }
 
     main {
       max-width: 700px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #111116;
-      border: 1px solid #222226;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 255, 153, 0.2);
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
-      color: #00ff99;
+      color: #111827;
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -62,18 +69,27 @@
     form label {
       display: block;
       margin: 1rem 0 0.5rem;
-      color: #b0fcd3;
+      color: #374151;
+      font-weight: 500;
     }
 
     form input,
     form textarea {
       width: 100%;
       padding: 0.75rem;
-      background-color: #1a1a1f;
-      border: 1px solid #333;
-      color: #e8e8f0;
-      border-radius: 5px;
+      background-color: #f9fafb;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      border-radius: 8px;
       font-size: 1rem;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      outline: none;
     }
 
     form textarea {
@@ -83,18 +99,18 @@
     form button {
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
-      background-color: #00ff99;
-      color: #0b0b0f;
+      background-color: #2563eb;
+      color: #ffffff;
       border: none;
-      font-weight: bold;
-      border-radius: 5px;
+      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease-in-out;
     }
 
     form button:hover {
-      background-color: #00ccff;
-      color: #0b0b0f;
+      background-color: #1e40af;
+      transform: scale(1.03);
     }
 
     .social-links {
@@ -104,19 +120,20 @@
 
     .social-links a {
       margin: 0 1rem;
-      color: #00ccff;
+      color: #2563eb;
       font-size: 1.5rem;
       transition: color 0.3s ease;
     }
 
     .social-links a:hover {
-      color: #cc33ff;
+      color: #1e40af;
     }
 
     footer {
-      border-top: 1px solid #222226;
-      color: #888;
+      border-top: 1px solid #e5e7eb;
+      color: #6b7280;
       font-size: 0.9rem;
+      background-color: #f9fafb;
     }
   </style>
 </head>
