@@ -4,7 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zaid Pathan | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: #ffffff;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to right, #e0f2fe, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .highlight {
+      color: #2563eb;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #374151;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+    }
+
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .stat-box {
+      background: #ffffff;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .stat-box h2 {
+      font-size: 2rem;
+      color: #2563eb;
+    }
+
+    .stat-box p {
+      margin-top: 0.5rem;
+      color: #374151;
+    }
+
+    /* About Section */
+    .about {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .about h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #2563eb;
+    }
+
+    .about p {
+      margin-bottom: 1rem;
+      color: #374151;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f3f4f6;
+      color: #6b7280;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,20 +184,18 @@
 
   <!-- About Section -->
   <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a Certified Penetration Tester with hands-on experience in vulnerability assessment,
-        red teaming, and cybersecurity research. My expertise lies in identifying security flaws,
-        strengthening networks, and delivering actionable remediation strategies to improve
-        overall system security.
-      </p>
-      <p>
-        With a strong foundation in offensive security and networking, I specialize in manual &
-        automated testing methodologies, exploitation techniques, and professional reporting
-        aligned with industry standards.
-      </p>
-    </div>
+    <h2>About Me</h2>
+    <p>
+      I am a Certified Penetration Tester with hands-on experience in vulnerability assessment,
+      red teaming, and cybersecurity research. My expertise lies in identifying security flaws,
+      strengthening networks, and delivering actionable remediation strategies to improve
+      overall system security.
+    </p>
+    <p>
+      With a strong foundation in offensive security and networking, I specialize in manual &
+      automated testing methodologies, exploitation techniques, and professional reporting
+      aligned with industry standards.
+    </p>
   </section>
 
   <!-- Footer -->
