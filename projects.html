@@ -5,46 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Zaid Pathan</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Same structure */
+    :root { --bg-light:#f9fafb;--bg-white:#fff;--text-dark:#1f2937;--primary:#2563eb;--border-light:#e5e7eb;--card-shadow:rgba(0,0,0,0.05);}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,Arial,sans-serif;}
+    body{background:var(--bg-light);color:var(--text-dark);}
+    header{background:var(--bg-white);text-align:center;padding:4rem 1rem 2.5rem;border-bottom:1px solid var(--border-light);box-shadow:0 4px 10px var(--card-shadow);}
+    header h1{color:var(--primary);font-size:2.2rem;font-weight:700;}
+    nav{background:var(--bg-white);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-light);box-shadow:0 2px 8px var(--card-shadow);}
+    .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;}
+    .logo{font-weight:700;font-size:1.4rem;color:var(--primary);}
+    .nav-links{display:flex;gap:1.5rem;}
+    .nav-links a{color:var(--text-dark);font-weight:500;text-decoration:none;position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s;}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    main{max-width:900px;margin:2rem auto;padding:2rem;background:var(--bg-white);border-radius:12px;box-shadow:0 4px 10px var(--card-shadow);}
+    h2{color:var(--primary);margin-bottom:1rem;font-size:1.8rem;}
+    .project{margin:1.5rem 0;padding:1rem;border-left:5px solid var(--primary);background:var(--bg-light);border-radius:6px;}
+    footer{background:var(--bg-white);color:#4b5563;text-align:center;padding:2.5rem;border-top:1px solid var(--border-light);margin-top:3rem;}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Cybersecurity Projects</h1>
-  </header>
-
+  <header><h1>Projects</h1></header>
   <nav>
-    <a href="index.html">About Me</a>
-    <a href="resume.html">Resume</a>
-    <a href="skills.html">Skills</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="logo">ZAID_PATHAN</div>
+      <div class="nav-links">
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </nav>
-
   <main>
-    <h2>Selected Case Studies</h2>
-
-    <div class="project">
-      <h3>🔓 SQL Injection Bank Portal</h3>
-      <p>Simulated SQL Injection attack on a dummy banking portal to demonstrate how authentication and data access can be bypassed using improperly sanitized inputs.</p>
-      <p><a href="#">View Code</a></p>
-    </div>
-
-    <div class="project">
-      <h3>🛡️ Red Team Simulation</h3>
-      <p>Conducted a red team exercise to evaluate enterprise-level defense readiness, including phishing simulations, privilege escalation, and lateral movement.</p>
-      <p><a href="#">Read Report</a></p>
-    </div>
-
-    <div class="project">
-      <h3>📊 Vulnerability Management Dashboard</h3>
-      <p>Developed a custom dashboard in Python and Flask to visualize vulnerabilities, prioritize risks, and automate patch reporting for system administrators.</p>
-      <p><a href="#">View Demo</a></p>
-    </div>
+    <h2>Highlighted Work</h2>
+    <div class="project"><h3>Fake Bank Portal</h3><p>Educational project demonstrating SQL injection vulnerabilities with dummy data.</p></div>
+    <div class="project"><h3>Personal Portfolio</h3><p>Fully responsive and animated cybersecurity portfolio website.</p></div>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p>
-  </footer>
+  <footer><p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p></footer>
 </body>
 </html>
