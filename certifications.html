@@ -3,116 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certifications | Zaid Pathan</title>
+  <title>Zaid Pathan Portfolio</title>
+  
+  <!-- Your unified navbar + theme CSS -->
   <style>
-    <!-- Add this inside <head> of every page -->
-<style>
-  :root {
-    --bg-light: #f9fafb;
-    --bg-white: #ffffff;
-    --text-dark: #1f2937;
-    --text-muted: #4b5563;
-    --primary: #2563eb;
-    --primary-dark: #1e40af;
-    --accent: #0ea5e9;
-    --border-light: #e5e7eb;
-    --card-shadow: rgba(0, 0, 0, 0.05);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
+    :root {
+      --bg-light: #f9fafb;
+      --bg-white: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --accent: #0ea5e9;
+      --border-light: #e5e7eb;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
 
-  header {
-    background: var(--bg-white);
-    text-align: center;
-    padding: 4rem 1rem 2.5rem;
-    border-bottom: 1px solid var(--border-light);
-    box-shadow: 0 4px 10px var(--card-shadow);
-  }
-  header h1 { color: var(--primary); font-size: 2.2rem; font-weight: 700; }
+    header {
+      background: var(--bg-white);
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 10px var(--card-shadow);
+    }
+    header h1 { color: var(--primary); font-size: 2.2rem; font-weight: 700; }
 
-  nav {
-    background: var(--bg-white);
-    position: sticky; top: 0; z-index: 100;
-    border-bottom: 1px solid var(--border-light);
-    box-shadow: 0 2px 8px var(--card-shadow);
-  }
-  .nav-container {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 1.5rem;
-  }
-  .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); }
-  .nav-links { display: flex; gap: 1.5rem; }
-  .nav-links a {
-    color: var(--text-dark); font-weight: 500; padding: 0.5rem 0; position: relative; text-decoration: none;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-    background: var(--primary); transition: width 0.3s ease;
-  }
-  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    nav {
+      background: var(--bg-white);
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px var(--card-shadow);
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+    }
+    .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      color: var(--text-dark); font-weight: 500; padding: 0.5rem 0; position: relative; text-decoration: none;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--primary); transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-  footer {
-    background: var(--bg-white); color: var(--text-muted); text-align: center;
-    padding: 2.5rem; border-top: 1px solid var(--border-light);
-    box-shadow: 0 -2px 8px var(--card-shadow);
-    margin-top: 3rem;
-  }
-</style>
-
+    footer {
+      background: var(--bg-white); color: var(--text-muted); text-align: center;
+      padding: 2.5rem; border-top: 1px solid var(--border-light);
+      box-shadow: 0 -2px 8px var(--card-shadow);
+      margin-top: 3rem;
+    }
   </style>
 </head>
-<body>
-  <nav>
-    <a href="index.html">About Me</a>
-    <a href="skills.html">Skills</a>
-    <a href="certifications.html" class="active">Certifications</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="resume.html">Resume</a>
-  </nav>
-
-  <main>
-    <h1>My Certifications</h1>
-    <div class="cert-grid">
-      <div class="cert-card" onclick="openLightbox('certifications/nsd_certificate.png')">
-        <img src="certifications/nsd_certificate.png" alt="NSD Certified Penetration Tester">
-        <h3>NSD Certified Penetration Tester</h3>
-      </div>
-      <div class="cert-card" onclick="openLightbox('certifications/networking_cert.png')">
-        <img src="certifications/networking_cert.png" alt="Networking Fundamentals">
-        <h3>Networking Fundamentals</h3>
-      </div>
-      <div class="cert-card" onclick="openLightbox('certifications/web_security_cert.png')">
-        <img src="certifications/web_security_cert.png" alt="Web Application Security">
-        <h3>Web Application Security</h3>
-      </div>
-      <div class="cert-card" onclick="openLightbox('certifications/python_cert.png')">
-        <img src="certifications/python_cert.png" alt="Python for Cybersecurity">
-        <h3>Python for Cybersecurity</h3>
-      </div>
-    </div>
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="">
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p>
-  </footer>
-
-  <script>
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').classList.add('active');
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-  </script>
-</body>
-</html>
-
-
