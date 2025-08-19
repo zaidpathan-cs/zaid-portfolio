@@ -4,60 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certifications | Zaid Pathan</title>
-  <style>
-    :root {
-      --bg: #f9fafb;
-      --white: #ffffff;
-      --primary: #2563eb;
-      --text: #111827;
-      --muted: #4b5563;
-      --shadow: rgba(0,0,0,0.05);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+<style>
+  :root {
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --primary: #2563eb;
+    --text: #111827;
+    --muted: #4b5563;
+    --shadow: rgba(0,0,0,0.05);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  body { background: var(--bg); color: var(--text); line-height: 1.6; }
 
-    nav {
-      background: var(--white);
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px var(--shadow);
-      position: sticky; top: 0; z-index: 100;
-    }
-    nav a { margin: 0 1rem; color: var(--muted); text-decoration: none; font-weight: 500; }
-    nav a.active, nav a:hover { color: var(--primary); }
+  /* Navigation */
+  nav {
+    background: var(--white);
+    box-shadow: 0 2px 5px var(--shadow);
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary);
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.25rem 0;
+  }
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
+  }
 
-    main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+  /* Main content */
+  main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
 
-    h1 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+  .cert { margin-bottom: 3rem; }
+  .cert img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow);
+  }
+  .cert h2 {
+    font-size: 1.2rem;
+    margin: 0.75rem 0 0.25rem;
+    color: var(--primary);
+  }
+  .cert p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.95rem;
+  }
 
-    .cert {
-      margin-bottom: 3rem;
-    }
-    .cert img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px var(--shadow);
-    }
-    .cert h2 {
-      font-size: 1.2rem;
-      margin: 0.75rem 0 0.25rem;
-      color: var(--primary);
-    }
-    .cert p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 0.95rem;
-    }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    margin-top: 2rem;
+    color: var(--muted);
+    box-shadow: 0 -2px 5px var(--shadow);
+  }
+</style>
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--white);
-      margin-top: 2rem;
-      color: var(--muted);
-      box-shadow: 0 -2px 5px var(--shadow);
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -104,4 +145,5 @@
   </footer>
 </body>
 </html>
+
 
