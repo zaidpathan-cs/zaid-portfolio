@@ -5,99 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certifications | Zaid Pathan</title>
 <style>
-  :root {
-    --bg: #f9fafb;
-    --white: #ffffff;
-    --primary: #2563eb;
-    --text: #111827;
-    --muted: #4b5563;
-    --shadow: rgba(0,0,0,0.05);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-  body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    /* ===== Light Theme Base (same as your new index.html) ===== */
+    :root {
+      --bg-light: #f9fafb;
+      --bg-white: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --accent: #0ea5e9;
+      --border-light: #e5e7eb;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
 
-  /* Navigation */
-  nav {
-    background: var(--white);
-    box-shadow: 0 2px 5px var(--shadow);
-    position: sticky; 
-    top: 0; 
-    z-index: 100;
-  }
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--primary);
-  }
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    padding: 0.25rem 0;
-  }
-  .nav-links a.active,
-  .nav-links a:hover {
-    color: var(--primary);
-  }
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-  }
-  .nav-links a:hover::after,
-  .nav-links a.active::after {
-    width: 100%;
-  }
+    header {
+      background: var(--bg-white);
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 10px var(--card-shadow);
+    }
+    header h1 { color: var(--primary); font-size: 2.2rem; font-weight: 700; }
 
-  /* Main content */
-  main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-  h1 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    nav {
+      background: var(--bg-white);
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px var(--card-shadow);
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+    }
+    .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      color: var(--text-dark); font-weight: 500; padding: 0.5rem 0; position: relative; text-decoration: none;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--primary); transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-  .cert { margin-bottom: 3rem; }
-  .cert img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow);
-  }
-  .cert h2 {
-    font-size: 1.2rem;
-    margin: 0.75rem 0 0.25rem;
-    color: var(--primary);
-  }
-  .cert p {
-    color: var(--muted);
-    margin: 0;
-    font-size: 0.95rem;
-  }
+    footer {
+      background: var(--bg-white); color: var(--text-muted); text-align: center;
+      padding: 2.5rem; border-top: 1px solid var(--border-light);
+      box-shadow: 0 -2px 8px var(--card-shadow);
+      margin-top: 3rem;
+    }
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--white);
-    margin-top: 2rem;
-    color: var(--muted);
-    box-shadow: 0 -2px 5px var(--shadow);
-  }
-</style>
+    /* ===== Page-specific (Skills) ===== */
+    main {
+      max-width: 900px; margin: 2rem auto; padding: 2rem;
+      background: var(--bg-white); border-radius: 12px; box-shadow: 0 4px 10px var(--card-shadow);
+      border: 1px solid var(--border-light);
+    }
+    h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.8rem; }
+    h3 { margin-top: 2rem; color: #111827; font-size: 1.3rem; }
+    ul { list-style: none; padding: 0; margin-top: 0.5rem; }
+    li {
+      background: var(--bg-light);
+      padding: 0.8rem 1rem; margin: 0.4rem 0;
+      border-left: 5px solid var(--primary);
+      border-radius: 6px; color: #374151; font-size: 1rem;
+      transition: background 0.2s ease;
+    }
+    li:hover { background: #f3f4f6; }
+
+    @media (max-width: 768px) {
+      header { padding: 3rem 1rem 2rem; }
+      header h1 { font-size: 1.8rem; }
+      .nav-container { flex-direction: column; gap: 0.75rem; }
+      main { margin: 1rem; padding: 1.25rem; }
+    }
+  </style>
 
 </head>
 <body>
@@ -145,5 +130,6 @@
   </footer>
 </body>
 </html>
+
 
 
