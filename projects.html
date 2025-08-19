@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Zaid Pathan</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Certifications | Zaid Pathan</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -23,11 +22,33 @@
     }
 
     header h1 {
-      color: #2563eb; /* Unified blue */
+      color: #2563eb;
       margin: 0;
     }
 
-    /* 🔹 Removed the conflicting nav styles so global style.css applies */
+    nav {
+      background-color: #ffffff;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #2563eb;
+    }
 
     main {
       max-width: 1000px;
@@ -45,36 +66,26 @@
       text-align: center;
     }
 
-    .project {
-      background: #f1faff;
-      padding: 1.2rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid #2563eb;
-      border-radius: 6px;
-      transition: transform 0.2s ease;
+    .cert {
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .project:hover {
-      transform: translateX(5px);
+    .cert img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .project h3 {
+    .cert h3 {
       color: #2563eb;
-      margin: 0 0 0.5rem;
-    }
-
-    .project p {
       margin: 0.5rem 0;
     }
 
-    .project a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
+    .cert p {
+      color: #555;
+      font-size: 0.95rem;
     }
 
     footer {
@@ -87,41 +98,37 @@
 </head>
 <body>
   <header>
-    <h1>Cybersecurity Projects</h1>
+    <h1>My Certifications</h1>
   </header>
 
-  <!-- 🔹 Navbar now matches your other pages -->
   <nav>
-    <div class="logo">ZAID_PATHAN</div>
-    <div class="nav-links">
-      <a href="index.html">About Me</a>
-      <a href="resume.html">Resume</a>
-      <a href="skills.html">Skills</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <a href="index.html">About Me</a>
+    <a href="resume.html">Resume</a>
+    <a href="skills.html">Skills</a>
+    <a href="certifications.html" class="active">Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <main>
-    <h2>Selected Case Studies</h2>
+    <h2>Certifications Showcase</h2>
 
-    <div class="project">
-      <h3>🔓 SQL Injection Bank Portal</h3>
-      <p>Simulated SQL Injection attack on a dummy banking portal to demonstrate how authentication and data access can be bypassed using improperly sanitized inputs.</p>
-      <p><a href="#">View Code</a></p>
+    <div class="cert">
+      <img src="images/cert1.jpg" alt="Certification 1">
+      <h3>NSD Penetration Tester</h3>
+      <p>Certified in advanced penetration testing methodologies.</p>
     </div>
 
-    <div class="project">
-      <h3>🛡️ Red Team Simulation</h3>
-      <p>Conducted a red team exercise to evaluate enterprise-level defense readiness, including phishing simulations, privilege escalation, and lateral movement.</p>
-      <p><a href="#">Read Report</a></p>
+    <div class="cert">
+      <img src="images/cert2.jpg" alt="Certification 2">
+      <h3>CompTIA Security+</h3>
+      <p>Core cybersecurity knowledge certification.</p>
     </div>
 
-    <div class="project">
-      <h3>📊 Vulnerability Management Dashboard</h3>
-      <p>Developed a custom dashboard in Python and Flask to visualize vulnerabilities, prioritize risks, and automate patch reporting for system administrators.</p>
-      <p><a href="#">View Demo</a></p>
+    <div class="cert">
+      <img src="images/cert3.jpg" alt="Certification 3">
+      <h3>CEH – Certified Ethical Hacker</h3>
+      <p>Validated skills in ethical hacking and system defense.</p>
     </div>
   </main>
 
