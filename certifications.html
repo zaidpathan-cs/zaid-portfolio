@@ -3,60 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zaid Pathan Portfolio</title>
-  
-  <!-- Your unified navbar + theme CSS -->
+  <title>Certifications | Zaid Pathan</title>
   <style>
     :root {
-      --bg-light: #f9fafb;
-      --bg-white: #ffffff;
-      --text-dark: #1f2937;
-      --text-muted: #4b5563;
+      --bg: #f9fafb;
+      --white: #ffffff;
       --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --accent: #0ea5e9;
-      --border-light: #e5e7eb;
-      --card-shadow: rgba(0, 0, 0, 0.05);
+      --text: #111827;
+      --muted: #4b5563;
+      --shadow: rgba(0,0,0,0.05);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
-
-    header {
-      background: var(--bg-white);
-      text-align: center;
-      padding: 4rem 1rem 2.5rem;
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 4px 10px var(--card-shadow);
-    }
-    header h1 { color: var(--primary); font-size: 2.2rem; font-weight: 700; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
 
     nav {
-      background: var(--bg-white);
+      background: var(--white);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px var(--shadow);
       position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 2px 8px var(--card-shadow);
     }
-    .nav-container {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 1.5rem;
+    nav a { margin: 0 1rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a.active, nav a:hover { color: var(--primary); }
+
+    main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+
+    h1 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+
+    .cert {
+      margin-bottom: 3rem;
     }
-    .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a {
-      color: var(--text-dark); font-weight: 500; padding: 0.5rem 0; position: relative; text-decoration: none;
+    .cert img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px var(--shadow);
     }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-      background: var(--primary); transition: width 0.3s ease;
+    .cert h2 {
+      font-size: 1.2rem;
+      margin: 0.75rem 0 0.25rem;
+      color: var(--primary);
     }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .cert p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
 
     footer {
-      background: var(--bg-white); color: var(--text-muted); text-align: center;
-      padding: 2.5rem; border-top: 1px solid var(--border-light);
-      box-shadow: 0 -2px 8px var(--card-shadow);
-      margin-top: 3rem;
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--white);
+      margin-top: 2rem;
+      color: var(--muted);
+      box-shadow: 0 -2px 5px var(--shadow);
     }
   </style>
 </head>
+<body>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html" class="active">Certifications</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h1>MY CERTIFICATES</h1>
+
+    <div class="cert">
+      <img src="certifications/nsd_certificate.png" alt="NSD Certified Penetration Tester">
+      <h2>NSD Certified Penetration Tester</h2>
+      <p>Practical certification focused on real-world penetration testing and vulnerability exploitation.</p>
+    </div>
+
+    <div class="cert">
+      <img src="certifications/networking_cert.png" alt="Networking Fundamentals">
+      <h2>Networking Fundamentals</h2>
+      <p>Comprehensive knowledge of TCP/IP, routing, switching, and network security protocols.</p>
+    </div>
+
+    <div class="cert">
+      <img src="certifications/web_security_cert.png" alt="Web Application Security Essentials">
+      <h2>Web Application Security Essentials</h2>
+      <p>Focused on OWASP Top 10 vulnerabilities, secure coding practices, and exploit mitigation.</p>
+    </div>
+
+    <div class="cert">
+      <img src="certifications/python_cert.png" alt="Python for Cybersecurity">
+      <h2>Python for Cybersecurity</h2>
+      <p>Hands-on certification in automation, scripting, and exploit development using Python.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Zaid Pathan. All rights reserved.
+  </footer>
+</body>
+</html>
