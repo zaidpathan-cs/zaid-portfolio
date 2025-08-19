@@ -27,26 +27,7 @@
       margin: 0;
     }
 
-    nav {
-      background-color: #ffffff;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      color: #4b5563; /* muted gray */
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #2563eb; /* hover/active blue */
-    }
+    /* 🔹 Removed the conflicting nav styles so global style.css applies */
 
     main {
       max-width: 1000px;
@@ -109,13 +90,17 @@
     <h1>Cybersecurity Projects</h1>
   </header>
 
+  <!-- 🔹 Navbar now matches your other pages -->
   <nav>
-    <a href="index.html">About Me</a>
-    <a href="resume.html">Resume</a>
-    <a href="skills.html">Skills</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="contact.html">Contact</a>
+    <div class="logo">ZAID_PATHAN</div>
+    <div class="nav-links">
+      <a href="index.html">About Me</a>
+      <a href="resume.html">Resume</a>
+      <a href="skills.html">Skills</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
   <main>
