@@ -5,177 +5,592 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Zaid Pathan</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Light Theme */
-    body {
-      background-color: #f9fafb;
-      color: #1f2937;
-      font-family: 'Inter', sans-serif;
+    /* Modern CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    header, footer {
-      background-color: #ffffff;
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom: 1px solid #e5e7eb;
+    /* Variables for consistent theming */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --secondary: #0f172a;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --background: #ffffff;
+      --background-alt: #f8fafc;
+      --accent: #ec4899;
+      --border: #e5e7eb;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 8px;
+      --transition: all 0.3s ease;
     }
 
-    header h1 {
-      color: #2563eb;
-      font-weight: 700;
+    /* Base Styles */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
     nav {
-      background-color: #ffffff;
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #e5e7eb;
       position: sticky;
       top: 0;
-      z-index: 10;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
     }
 
-    nav a {
-      color: #374151;
-      margin: 0 1rem;
+    nav.scrolled {
+      padding: 0.8rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--secondary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: var(--transition);
+      position: relative;
+      font-size: 1.05rem;
     }
 
-    nav a:hover, nav a.active {
-      color: #2563eb;
+    .nav-links a:hover {
+      color: var(--primary);
     }
 
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: var(--transition);
+      border-radius: 2px;
     }
 
-    h2 {
-      color: #111827;
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--secondary);
+    }
+
+    /* Page Header */
+    .page-header {
       text-align: center;
+      padding: 5rem 0 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Contact Content */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 2rem 0 5rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--background);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h2 {
+      font-size: 1.8rem;
+      color: var(--secondary);
       margin-bottom: 1.5rem;
     }
 
-    form label {
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
       display: block;
-      margin: 1rem 0 0.5rem;
-      color: #374151;
-      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--secondary);
     }
 
-    form input,
-    form textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      padding: 0.75rem;
-      background-color: #f9fafb;
-      border: 1px solid #d1d5db;
-      color: #111827;
-      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
       font-size: 1rem;
-      transition: border 0.3s ease, box-shadow 0.3s ease;
+      transition: var(--transition);
     }
 
-    form input:focus,
-    form textarea:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    .form-group input:focus,
+    .form-group textarea:focus {
       outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
-    form textarea {
+    .form-group textarea {
+      min-height: 150px;
       resize: vertical;
     }
 
-    form button {
-      margin-top: 1.5rem;
-      padding: 0.75rem 2rem;
-      background-color: #2563eb;
-      color: #ffffff;
-      border: none;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: var(--radius);
       font-weight: 600;
-      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease-in-out;
+      gap: 0.5rem;
+      font-size: 1rem;
     }
 
-    form button:hover {
-      background-color: #1e40af;
-      transform: scale(1.03);
+    .btn-primary {
+      background: var(--primary);
+      color: white;
     }
 
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-card h3 i {
+      color: var(--primary);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-text {
+      color: var(--text-light);
+    }
+
+    .contact-text a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: var(--primary);
+    }
+
+    /* Social Links */
     .social-links {
-      margin-top: 2rem;
-      text-align: center;
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .social-links a {
-      margin: 0 1rem;
-      color: #2563eb;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
+      width: 45px;
+      height: 45px;
+      background: var(--background-alt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
     }
 
     .social-links a:hover {
-      color: #1e40af;
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
     }
 
+    /* Footer */
     footer {
-      border-top: 1px solid #e5e7eb;
-      color: #6b7280;
+      background: var(--secondary);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-social a {
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      color: #94a3b8;
       font-size: 0.9rem;
-      background-color: #f9fafb;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--background);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        gap: 1.2rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-toggle {
+        display: block;
+      }
+      
+      .page-header {
+        padding: 4rem 0 2rem;
+      }
+      
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .contact-form {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-form {
+        padding: 1.5rem;
+      }
+      
+      .contact-card {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Contact Zaid Pathan</h1>
-  </header>
-
-  <nav>
-    <a href="index.html">About Me</a>
-    <a href="resume.html">Resume</a>
-    <a href="skills.html">Skills</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html" class="active">Contact</a>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Zaid<span>Pathan</span></a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
-    <h2>Get in Touch</h2>
-    <form action="#" method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>I'm always open to discussing cybersecurity projects, penetration testing opportunities, or potential collaborations</p>
+    </div>
+  </header>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/zaidpathan-cs" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+  <!-- Contact Content -->
+  <main class="container">
+    <div class="contact-content">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send Me a Message</h2>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3><i class="fas fa-envelope"></i> Email</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <a href="mailto:zaidkhan.252000@gmail.com">zaidkhan.252000@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <h3><i class="fas fa-share-alt"></i> Social Media</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-text">
+                <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank">LinkedIn Profile</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-text">
+                <a href="https://github.com/zaidpathan-cs" target="_blank">GitHub Profile</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/zaidpathan-cs" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Zaid Pathan | Offensive Security Specialist</p>
+    <div class="container footer-content">
+      <div class="footer-social">
+        <a href="https://github.com/zaidpathan-cs" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
-
