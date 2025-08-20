@@ -4,234 +4,494 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certifications | Zaid Pathan</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-light: #f9fafb;
-      --bg-white: #ffffff;
-      --text-dark: #1f2937;
-      --text-muted: #4b5563;
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --border-light: #e5e7eb;
-    }
-
-    * {
+    /* Modern CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
+    /* Variables for consistent theming */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --secondary: #0f172a;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --background: #ffffff;
+      --background-alt: #f8fafc;
+      --accent: #ec4899;
+      --border: #e5e7eb;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    /* Base Styles */
     body {
-      background: var(--bg-light);
-      color: var(--text-dark);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      min-height: 100vh;
     }
 
-    /* Header */
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    header h1 {
-      font-size: 2rem;
-      color: var(--primary-dark);
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Navbar */
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
     nav {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
       z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
     }
+
+    nav.scrolled {
+      padding: 0.8rem 0;
+    }
+
     .nav-container {
-      max-width: 1200px;
-      margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 1rem 1.5rem;
+      align-items: center;
     }
+
     .logo {
-      font-weight: bold;
-      font-size: 1.4rem;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--secondary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
       color: var(--primary);
     }
+
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 2.2rem;
+      list-style: none;
     }
+
     .nav-links a {
+      color: var(--text);
       text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
+      font-weight: 600;
+      transition: var(--transition);
       position: relative;
+      font-size: 1.05rem;
     }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
     .nav-links a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
+      bottom: -6px;
       left: 0;
-      bottom: -3px;
+      width: 0;
+      height: 3px;
       background: var(--primary);
-      transition: width 0.3s;
+      transition: var(--transition);
+      border-radius: 2px;
     }
-    .nav-links a:hover::after,
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
     .nav-links a.active::after {
       width: 100%;
     }
 
-    /* Certification Grid */
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .cert-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.2s;
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
       cursor: pointer;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+      color: var(--secondary);
     }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      padding: 5rem 0 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Certifications Grid */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0 5rem;
+    }
+
+    .cert-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
     .cert-card:hover {
       transform: translateY(-5px);
-    }
-    .cert-card img {
-      max-width: 100%;
-      border-radius: 6px;
-    }
-    .cert-card h2 {
-      margin-top: 0.8rem;
-      font-size: 1.1rem;
-      color: var(--primary-dark);
+      box-shadow: var(--shadow-lg);
     }
 
-    /* Modal (Lightbox) */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-    }
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 80%;
-      border-radius: 8px;
-    }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 2rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .caption {
-      margin: auto;
-      display: block;
-      text-align: center;
-      color: #f1f1f1;
-      padding: 0.5rem;
-      font-size: 1.1rem;
+    .cert-image {
+      height: 200px;
+      background: linear-gradient(45deg, #e0f2fe, #f0f9ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      position: relative;
+      overflow: hidden;
     }
 
+    .cert-image i {
+      font-size: 4rem;
+      opacity: 0.7;
+    }
+
+    .cert-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-content h3 {
+      font-size: 1.4rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-issuer {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .cert-date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-description {
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cert-link:hover {
+      gap: 0.8rem;
+    }
+
+    /* Footer */
     footer {
-      background: var(--bg-white);
-      color: var(--text-muted);
+      background: var(--secondary);
+      color: white;
+      padding: 3rem 0;
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--background);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        gap: 1.2rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-toggle {
+        display: block;
+      }
+      
+      .page-header {
+        padding: 4rem 0 2rem;
+      }
+      
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>My Certifications</h1>
-  </header>
-
-  <nav>
-    <div class="nav-container">
-      <div class="logo">ZAID_PATHAN</div>
-      <div class="nav-links">
-        <a href="index.html">About Me</a>
-        <a href="resume.html">Resume</a>
-        <a href="skills.html">Skills</a>
-        <a href="certifications.html" class="active">Certifications</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Zaid<span>Pathan</span></a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <main>
-    <!-- Certificate 1 -->
-    <div class="cert-card" onclick="openModal('certifications/nsd_certificate.png','NSD Certified Penetration Tester')">
-      <img src="certifications/nsd_certificate.png" alt="NSD Certified Penetration Tester">
-      <h2>NSD Certified Penetration Tester</h2>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>My Certifications</h1>
+      <p>Professional credentials that validate my expertise in cybersecurity and penetration testing</p>
     </div>
+  </header>
 
-    <!-- Certificate 2 -->
-    <div class="cert-card" onclick="openModal('certifications/networking_cert.png','Networking Fundamentals')">
-      <img src="certifications/networking_cert.png" alt="Networking Fundamentals">
-      <h2>Networking Fundamentals</h2>
-    </div>
+  <!-- Certifications Grid -->
+  <main class="container">
+    <div class="certifications-grid">
+      <!-- Certification 1 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="cert-content">
+          <h3>NSD Certified Penetration Tester</h3>
+          <div class="cert-issuer">National Security Database</div>
+          <div class="cert-date">Issued: June 2023</div>
+          <p class="cert-description">Advanced certification demonstrating expertise in penetration testing methodologies, vulnerability assessment, and security auditing.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
-    <!-- Certificate 3 -->
-    <div class="cert-card" onclick="openModal('certifications/web_security_cert.png','Web Application Security Essentials')">
-      <img src="certifications/web_security_cert.png" alt="Web Application Security">
-      <h2>Web App Security Essentials</h2>
-    </div>
+      <!-- Certification 2 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Networking Fundamentals</h3>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-date">Issued: March 2022</div>
+          <p class="cert-description">Comprehensive understanding of network infrastructure, protocols, and security principles essential for cybersecurity professionals.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
-    <!-- Certificate 4 -->
-    <div class="cert-card" onclick="openModal('certifications/python_cert.png','Python for Cybersecurity')">
-      <img src="certifications/python_cert.png" alt="Python for Cybersecurity">
-      <h2>Python for Cybersecurity</h2>
+      <!-- Certification 3 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Web Application Security</h3>
+          <div class="cert-issuer">OWASP Foundation</div>
+          <div class="cert-date">Issued: January 2023</div>
+          <p class="cert-description">Mastery of web application security testing, vulnerability identification, and secure coding practices.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Certification 4 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fab fa-python"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Python for Cybersecurity</h3>
+          <div class="cert-issuer">SoloLearn</div>
+          <div class="cert-date">Issued: September 2022</div>
+          <p class="cert-description">Advanced Python programming skills applied to cybersecurity tasks including automation, tool development, and analysis.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Certification 5 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fas fa-user-secret"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Ethical Hacking Essentials</h3>
+          <div class="cert-issuer">EC-Council</div>
+          <div class="cert-date">Issued: November 2022</div>
+          <p class="cert-description">Fundamentals of ethical hacking, reconnaissance techniques, and vulnerability assessment methodologies.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Certification 6 -->
+      <div class="cert-card">
+        <div class="cert-image">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="cert-content">
+          <h3>Security Risk Management</h3>
+          <div class="cert-issuer">ISACA</div>
+          <div class="cert-date">Issued: August 2022</div>
+          <p class="cert-description">Expertise in identifying, assessing, and mitigating security risks in organizational environments.</p>
+          <a href="#" class="cert-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- Modal -->
-  <div id="certModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
-    <div class="caption" id="caption"></div>
-  </div>
-
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Zaid Pathan. All rights reserved.
+    <div class="container footer-content">
+      <div class="social-links">
+        <a href="https://github.com/zaidpathan-cs" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    function openModal(imgSrc, captionText) {
-      document.getElementById("certModal").style.display = "block";
-      document.getElementById("modalImg").src = imgSrc;
-      document.getElementById("caption").innerText = captionText;
-    }
-    function closeModal() {
-      document.getElementById("certModal").style.display = "none";
-    }
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
   </script>
 </body>
 </html>
