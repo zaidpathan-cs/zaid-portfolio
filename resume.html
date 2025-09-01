@@ -275,14 +275,10 @@
 
     .resume-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 4rem;
-    }
-
-    @media (max-width: 968px) {
-      .resume-grid {
-        grid-template-columns: 1fr;
-      }
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .resume-section {
@@ -512,90 +508,22 @@
   <section class="resume-content">
     <div class="container">
       <div class="resume-grid">
-        <!-- Left Column -->
-        <div>
-          <!-- Experience -->
-          <div class="resume-section">
-            <h2>Work Experience</h2>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2023 - Present</div>
-              <h3 class="timeline-title">Cybersecurity Researcher</h3>
-              <div class="timeline-subtitle">Freelance</div>
-              <p>Conducted vulnerability assessments and penetration tests for various clients, identifying security flaws and providing remediation strategies.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2022 - 2023</div>
-              <h3 class="timeline-title">IT Security Intern</h3>
-              <div class="timeline-subtitle">TechSecure Solutions</div>
-              <p>Assisted in security audits, vulnerability scanning, and incident response activities. Gained hands-on experience with security tools and methodologies.</p>
-            </div>
+        <!-- Experience Only -->
+        <div class="resume-section">
+          <h2>Work Experience</h2>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - Present</div>
+            <h3 class="timeline-title">Cybersecurity Researcher</h3>
+            <div class="timeline-subtitle">Freelance</div>
+            <p>Conducted vulnerability assessments and penetration tests for various clients, identifying security flaws and providing remediation strategies.</p>
           </div>
           
-          <!-- Education -->
-          <div class="resume-section">
-            <h2>Education</h2>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2020 - 2023</div>
-              <h3 class="timeline-title">Bachelor of Science in Cybersecurity</h3>
-              <div class="timeline-subtitle">University of Technology</div>
-              <p>Specialized in network security, ethical hacking, and digital forensics. Graduated with honors.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2018 - 2020</div>
-              <h3 class="timeline-title">Diploma in Information Technology</h3>
-              <div class="timeline-subtitle">City College</div>
-              <p>Focused on networking fundamentals, system administration, and introductory security concepts.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right Column -->
-        <div>
-          <!-- Achievements -->
-          <div class="resume-section">
-            <h2>Achievements</h2>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2023</div>
-              <h3 class="timeline-title">Bug Bounty Recognition</h3>
-              <p>Recognized for identifying critical vulnerabilities in popular web applications through bug bounty programs.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2022</div>
-              <h3 class="timeline-title">Cybersecurity Research Paper</h3>
-              <p>Published research on emerging threats in IoT security at International Cybersecurity Conference.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-date">2021</div>
-              <h3 class="timeline-title">Hackathon Winner</h3>
-              <p>Led a team to victory in a regional cybersecurity competition focused on network defense strategies.</p>
-            </div>
-          </div>
-          
-          <!-- Projects Preview -->
-          <div class="resume-section">
-            <h2>Recent Projects</h2>
-            
-            <div class="timeline-item">
-              <h3 class="timeline-title">Vulnerability Assessment Tool</h3>
-              <p>Developed a custom scanner for identifying security weaknesses in web applications with detailed reporting features.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <h3 class="timeline-title">Network Security Analysis</h3>
-              <p>Conducted comprehensive security assessment of corporate network infrastructure, identifying critical vulnerabilities.</p>
-            </div>
-            
-            <div class="timeline-item">
-              <h3 class="timeline-title">Security Research</h3>
-              <p>Discovered and analyzed novel attack vectors and exploitation techniques in modern web applications.</p>
-            </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022 - 2023</div>
+            <h3 class="timeline-title">IT Security Intern</h3>
+            <div class="timeline-subtitle">TechSecure Solutions</div>
+            <p>Assisted in security audits, vulnerability scanning, and incident response activities. Gained hands-on experience with security tools and methodologies.</p>
           </div>
         </div>
       </div>
