@@ -1,213 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zaid Pathan | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset + Variables */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --secondary: #0f172a;
-      --text: #1f2937;
-      --text-light: #6b7280;
-      --background: #ffffff;
-      --background-alt: #f8fafc;
-      --border: #e5e7eb;
-      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-      --radius: 8px;
-      --transition: all 0.6s ease;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    section { padding: 5rem 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-
-    h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
-    h1 { font-size: 3rem; letter-spacing: -0.025em; }
-    h2 { font-size: 2.2rem; color: var(--secondary); position: relative; display: inline-block; }
-    h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 50px; height: 4px; background: var(--primary); border-radius: 2px; }
-    p { margin-bottom: 1.5rem; color: var(--text-light); }
-
-    /* Navbar */
-    nav {
-      position: fixed; top: 0; left: 0; width: 100%;
-      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
-      padding: 1.25rem 0; z-index: 1000; transition: var(--transition);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    nav.scrolled { padding: 0.75rem 0; box-shadow: var(--shadow); }
-
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
-    .logo span { color: var(--primary); }
-
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--text); text-decoration: none; font-weight: 500; position: relative; transition: var(--transition);
-    }
-    .nav-links a:hover { color: var(--primary); }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -5px; left: 0;
-      width: 0; height: 2px; background: var(--primary);
-      transition: var(--transition);
-    }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-links a.active { color: var(--primary); }
-
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--secondary); }
-
-    /* Skills */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;
-    }
-    .skill-category {
-      background: var(--background); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);
-      transform: translateY(30px); opacity: 0; transition: var(--transition);
-    }
-    .skill-category.show { transform: translateY(0); opacity: 1; }
-    .skill-category h3 { color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-    .skill-tag { background: var(--background-alt); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.9rem; border: 1px solid var(--border); }
-
-    /* Footer */
-    footer { background: var(--secondary); color: white; padding: 3rem 0; text-align: center; }
-    .footer-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-    .social-links { display: flex; gap: 1.5rem; }
-    .social-links a { color: white; font-size: 1.5rem; transition: var(--transition); }
-    .social-links a:hover { color: var(--primary); transform: translateY(-3px); }
-    .copyright { color: #94a3b8; font-size: 0.875rem; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none; flex-direction: column; position: absolute; top: 100%; left: 0;
-        width: 100%; background: var(--background); padding: 1.5rem; box-shadow: var(--shadow);
-      }
-      .nav-links.active { display: flex; }
-      .nav-toggle { display: block; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaid Pathan | Skills</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#0a0e17;--bg2:#0d1220;--surface:#141e2e;--surface2:#1a2540;--green:#00ff88;--green-dim:#00cc6a;--green-glow:rgba(0,255,136,0.1);--red:#ff4444;--amber:#ffaa00;--blue:#4499ff;--text:#e2e8f0;--text2:#94a3b8;--text3:#475569;--border:rgba(0,255,136,0.15);--border2:rgba(0,255,136,0.07);--mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;}
+html{scroll-behavior:smooth;}body{font-family:var(--mono);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,14,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border2);transition:all .3s;}
+nav.scrolled{border-bottom-color:var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px;padding:0 2rem;}
+.logo{font-family:var(--display);font-size:1.25rem;font-weight:800;color:var(--text);text-decoration:none;}.logo .b{color:var(--green);}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--text2);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;transition:color .2s;}
+.nav-links a::before{content:'./';color:var(--green);opacity:0;transition:opacity .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--green);}
+.nav-links a:hover::before,.nav-links a.active::before{opacity:1;}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);color:var(--text2);padding:.4rem .6rem;cursor:pointer;border-radius:4px;font-size:1rem;}
+.page-hero{min-height:40vh;display:flex;align-items:flex-end;padding:7rem 2rem 3rem;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border2) 1px,transparent 1px),linear-gradient(90deg,var(--border2) 1px,transparent 1px);background-size:60px 60px;opacity:.4;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;width:100%;}
+.page-tag{font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.2em;margin-bottom:.75rem;}
+.page-title{font-family:var(--display);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:#fff;line-height:1;}
+.page-sub{color:var(--text2);font-size:.9rem;margin-top:1rem;}
+.content{max-width:1200px;margin:0 auto;padding:5rem 2rem;}
+.section-label{font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.2em;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border2);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:4rem;}
+.skill-card{background:var(--surface);border:1px solid var(--border2);padding:1.75rem;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .5s;}
+.skill-card.show{opacity:1;transform:translateY(0);}
+.skill-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--green);transition:height .4s;}
+.skill-card:hover::before{height:100%;}
+.skill-card:hover{border-color:var(--border);background:var(--surface2);}
+.card-icon{font-size:1.5rem;margin-bottom:1rem;}
+.card-icon.offensive{color:var(--red);}
+.card-icon.tools{color:var(--amber);}
+.card-icon.web{color:var(--green);}
+.card-icon.network{color:var(--blue);}
+.card-icon.code{color:var(--green-dim);}
+.card-title{font-family:var(--display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:1.25rem;}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.tag{padding:.3rem .75rem;border:1px solid var(--border2);font-size:.75rem;color:var(--text2);transition:all .2s;}
+.tag:hover{border-color:var(--green);color:var(--green);background:var(--green-glow);}
+.bar-section{margin-bottom:4rem;}
+.bar-title{font-family:var(--display);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1.5rem;}
+.skill-bar{margin-bottom:1rem;}
+.bar-header{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.4rem;}
+.bar-name{color:var(--text2);}
+.bar-pct{color:var(--green);}
+.bar-track{height:4px;background:var(--surface2);position:relative;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-dim));width:0;transition:width 1s ease;}
+footer{background:var(--bg2);border-top:1px solid var(--border2);padding:3rem 2rem;text-align:center;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-logo{font-family:var(--display);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:1.5rem;}.footer-logo span{color:var(--green);}
+.social-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.5rem;}
+.social-links a{color:var(--text3);font-size:1.25rem;transition:color .2s;text-decoration:none;}.social-links a:hover{color:var(--green);}
+.copyright{font-size:.75rem;color:var(--text3);}
+@media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;width:100%;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.5rem;gap:1.5rem;}.nav-links.open{display:flex;}.nav-toggle{display:block;}}
+</style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Zaid<span>Pathan</span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="skills.html" class="active">Skills</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="b">[</span>ZP<span class="b">]</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- Main -->
-  <main class="page-content">
-    <div class="container">
-      <h1>Skills</h1>
-      <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category"><h3><i class="fas fa-shield-alt"></i> Penetration Testing</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Network Scanning</span>
-              <span class="skill-tag">Vulnerability Assessment</span>
-              <span class="skill-tag">Web App Testing</span>
-              <span class="skill-tag">Social Engineering</span>
-              <span class="skill-tag">Wireless Security</span>
-            </div>
-          </div>
-          <div class="skill-category"><h3><i class="fas fa-tools"></i> Security Tools</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Metasploit</span>
-              <span class="skill-tag">Burp Suite</span>
-              <span class="skill-tag">Nmap</span>
-              <span class="skill-tag">Wireshark</span>
-              <span class="skill-tag">Kali Linux</span>
-            </div>
-          </div>
-          <div class="skill-category"><h3><i class="fas fa-code"></i> Programming</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Bash Scripting</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">PowerShell</span>
-            </div>
-          </div>
-          <div class="skill-category"><h3><i class="fas fa-network-wired"></i> Networking</h3>
-            <div class="skill-list">
-              <span class="skill-tag">TCP/IP</span>
-              <span class="skill-tag">Switching & Routing</span>
-              <span class="skill-tag">Firewalls</span>
-              <span class="skill-tag">VPN</span>
-              <span class="skill-tag">IDS/IPS</span>
-              <span class="skill-tag">Network Protocols</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="page-tag">// skills.map</div>
+    <h1 class="page-title">Technical<br>Arsenal</h1>
+    <p class="page-sub">Tools, techniques, and knowledge — all battle-tested in real engagements.</p>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="social-links">
-        <a href="https://github.com/zaidpathan-cs"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+<div class="content">
+  <div class="section-label">Skill Categories</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="card-icon offensive"><i class="fas fa-crosshairs"></i></div>
+      <div class="card-title">Offensive Security</div>
+      <div class="tags">
+        <span class="tag">Penetration Testing</span><span class="tag">VAPT</span>
+        <span class="tag">Privilege Escalation</span><span class="tag">Exploit Dev</span>
+        <span class="tag">Reconnaissance</span><span class="tag">Black-Box Testing</span>
       </div>
-      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved.</p>
     </div>
-  </footer>
+    <div class="skill-card">
+      <div class="card-icon tools"><i class="fas fa-tools"></i></div>
+      <div class="card-title">Security Tools</div>
+      <div class="tags">
+        <span class="tag">Burp Suite</span><span class="tag">Nmap</span>
+        <span class="tag">Nessus</span><span class="tag">Metasploit</span>
+        <span class="tag">Wireshark</span><span class="tag">Kali Linux</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="card-icon web"><i class="fas fa-globe"></i></div>
+      <div class="card-title">Web App Security</div>
+      <div class="tags">
+        <span class="tag">OWASP Top 10</span><span class="tag">SQLi</span>
+        <span class="tag">XSS</span><span class="tag">IDOR</span>
+        <span class="tag">Session Mgmt</span><span class="tag">Access Control</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="card-icon network"><i class="fas fa-network-wired"></i></div>
+      <div class="card-title">Networking</div>
+      <div class="tags">
+        <span class="tag">OSI Model</span><span class="tag">TCP/IP</span>
+        <span class="tag">Routing &amp; Switching</span><span class="tag">Subnetting</span>
+        <span class="tag">Firewalls</span><span class="tag">VPN / IDS/IPS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="card-icon code"><i class="fas fa-code"></i></div>
+      <div class="card-title">Programming</div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Bash Scripting</span>
+        <span class="tag">JavaScript</span><span class="tag">SQL</span>
+        <span class="tag">HTML</span><span class="tag">PowerShell</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="card-icon tools" style="color:var(--green)"><i class="fas fa-shield-alt"></i></div>
+      <div class="card-title">Compliance &amp; Hardening</div>
+      <div class="tags">
+        <span class="tag">EUDR</span><span class="tag">MFA Enforcement</span>
+        <span class="tag">Log Monitoring</span><span class="tag">Encryption</span>
+        <span class="tag">CVE Patching</span><span class="tag">Audit Docs</span>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    // Navbar scroll shrink
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+  <div class="section-label">Proficiency</div>
+  <div class="bar-section">
+    <div class="bar-title">Core Capabilities</div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Web Application Penetration Testing</span><span class="bar-pct">90%</span></div><div class="bar-track"><div class="bar-fill" data-width="90"></div></div></div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Burp Suite / OWASP methodology</span><span class="bar-pct">88%</span></div><div class="bar-track"><div class="bar-fill" data-width="88"></div></div></div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Network Scanning (Nmap / Nessus)</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-width="85"></div></div></div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Python Scripting</span><span class="bar-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-width="75"></div></div></div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Linux / Kali</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-width="85"></div></div></div>
+    <div class="skill-bar"><div class="bar-header"><span class="bar-name">Security Report Writing</span><span class="bar-pct">92%</span></div><div class="bar-track"><div class="bar-fill" data-width="92"></div></div></div>
+  </div>
+</div>
 
-    // Mobile toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
-
-    // Fade-in animation on scroll
-    const revealElements = document.querySelectorAll('.skill-category');
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      revealElements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) el.classList.add('show');
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span>[</span>ZP<span>]</span></div>
+    <div class="social-links">
+      <a href="https://github.com/zaidpathan-cs" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="copyright">© 2025 Zaid Pathan — All rights reserved.</p>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('show');
+    e.target.querySelectorAll('.bar-fill').forEach(b=>{b.style.width=b.dataset.width+'%';});
+    obs.unobserve(e.target);
+  }
+}),{threshold:.1});
+document.querySelectorAll('.skill-card,.bar-section').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
-
