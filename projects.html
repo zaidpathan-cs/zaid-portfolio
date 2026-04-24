@@ -1,180 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Zaid Pathan</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* ===== Same CSS you provided (unchanged) ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --primary: #2563eb; --primary-dark: #1e40af; --secondary: #0f172a;
-      --text: #1f2937; --text-light: #6b7280; --background: #ffffff; 
-      --background-alt: #f8fafc; --accent: #ec4899; --border: #e5e7eb;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --radius: 8px; --transition: all 0.6s ease;
-    }
-    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); color: var(--text); line-height: 1.6; }
-    html { scroll-behavior: smooth; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* Navbar */
-    nav { position: sticky; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08); transition: var(--transition); }
-    nav.scrolled { padding: 0.8rem 0; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 800; font-size: 1.6rem; color: var(--secondary); text-decoration: none; }
-    .logo span { color: var(--primary); }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; position: relative; font-size: 1.05rem; transition: var(--transition); }
-    .nav-links a:hover { color: var(--primary); }
-    .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 3px; background: var(--primary); transition: var(--transition); border-radius: 2px; }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-links a.active { color: var(--primary); }
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--secondary); }
-
-    /* Header */
-    .page-header { text-align: center; padding: 5rem 0 3rem; }
-    .page-header h1 { font-size: 3rem; font-weight: 800; color: var(--secondary); margin-bottom: 1rem; }
-    .page-header p { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
-
-    /* Projects */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; padding: 2rem 0 5rem; }
-    .project-card { background: var(--background); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); opacity: 0; transform: translateY(40px); padding: 1.5rem; text-align: center; }
-    .project-card.show { opacity: 1; transform: translateY(0); }
-    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .project-image { height: 120px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
-    .project-image i { font-size: 4rem; opacity: 0.7; }
-    .project-card h3 { margin: 1rem 0; font-size: 1.4rem; color: var(--secondary); }
-    .project-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; text-decoration: none; transition: var(--transition); }
-    .project-link:hover { gap: 0.8rem; }
-
-    /* Description */
-    .project-description { max-width: 800px; margin: 2rem auto 4rem; background: var(--background); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow); color: var(--text-light); }
-
-    /* Footer */
-    footer { background: var(--secondary); color: white; padding: 3rem 0; text-align: center; }
-    .social-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
-    .social-links a { color: white; font-size: 1.5rem; transition: var(--transition); }
-    .social-links a:hover { color: var(--primary); transform: translateY(-3px); }
-    .copyright { color: #94a3b8; font-size: 0.9rem; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--background); padding: 1.5rem; box-shadow: var(--shadow-lg); gap: 1.2rem; }
-      .nav-links.active { display: flex; }
-      .nav-toggle { display: block; }
-      .page-header h1 { font-size: 2.2rem; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaid Pathan | Projects</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#0a0e17;--bg2:#0d1220;--surface:#141e2e;--surface2:#1a2540;--green:#00ff88;--green-dim:#00cc6a;--green-glow:rgba(0,255,136,0.1);--red:#ff4444;--amber:#ffaa00;--blue:#4499ff;--text:#e2e8f0;--text2:#94a3b8;--text3:#475569;--border:rgba(0,255,136,0.15);--border2:rgba(0,255,136,0.07);--mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;}
+html{scroll-behavior:smooth;}body{font-family:var(--mono);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(10,14,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border2);transition:all .3s;}
+nav.scrolled{border-bottom-color:var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px;padding:0 2rem;}
+.logo{font-family:var(--display);font-size:1.25rem;font-weight:800;color:var(--text);text-decoration:none;}.logo .b{color:var(--green);}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--text2);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;transition:color .2s;}
+.nav-links a::before{content:'./';color:var(--green);opacity:0;transition:opacity .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--green);}
+.nav-links a:hover::before,.nav-links a.active::before{opacity:1;}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);color:var(--text2);padding:.4rem .6rem;cursor:pointer;border-radius:4px;font-size:1rem;}
+.page-hero{min-height:40vh;display:flex;align-items:flex-end;padding:7rem 2rem 3rem;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border2) 1px,transparent 1px),linear-gradient(90deg,var(--border2) 1px,transparent 1px);background-size:60px 60px;opacity:.4;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;width:100%;}
+.page-tag{font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.2em;margin-bottom:.75rem;}
+.page-title{font-family:var(--display);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:#fff;line-height:1;}
+.page-sub{color:var(--text2);font-size:.9rem;margin-top:1rem;}
+.content{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
+.section-label{font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.2em;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border2);}
+.project{margin-bottom:4rem;opacity:0;transform:translateY(24px);transition:all .6s;}
+.project.show{opacity:1;transform:translateY(0);}
+.project-top{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;margin-bottom:2rem;}
+.project-type{font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem;}
+.project-name{font-family:var(--display);font-size:1.75rem;font-weight:800;color:#fff;margin-bottom:.5rem;}
+.project-scope{font-size:.8rem;color:var(--text2);}
+.project-id{font-family:var(--display);font-size:5rem;font-weight:800;color:var(--border2);line-height:1;text-align:right;}
+.project-divider{height:1px;background:var(--border2);margin-bottom:2rem;}
+.project-desc{color:var(--text2);font-size:.875rem;line-height:1.9;margin-bottom:2rem;}
+.project-desc .hl{color:var(--green);}
+.findings-title{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;}
+.findings-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-bottom:2rem;}
+.finding{background:var(--surface);border:1px solid var(--border2);padding:.875rem 1rem;}
+.finding-sev{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;}
+.finding-sev.crit{color:var(--red);}
+.finding-sev.high{color:var(--amber);}
+.finding-sev.info{color:var(--blue);}
+.finding-name{color:var(--text);font-size:.85rem;}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+.tag{padding:.25rem .75rem;border:1px solid var(--border2);font-size:.72rem;color:var(--text2);}
+.project-links{display:flex;gap:1rem;}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;background:var(--green);color:#000;font-family:var(--mono);font-size:.8rem;font-weight:700;text-decoration:none;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:all .2s;}
+.btn-primary:hover{background:#fff;}
+.btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;background:transparent;color:var(--green);font-family:var(--mono);font-size:.8rem;font-weight:500;text-decoration:none;border:1px solid var(--green);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:all .2s;}
+.btn-outline:hover{background:var(--green-glow);}
+.note{font-size:.78rem;color:var(--text3);padding:.75rem 1rem;border-left:2px solid var(--border);margin-top:1rem;}
+footer{background:var(--bg2);border-top:1px solid var(--border2);padding:3rem 2rem;text-align:center;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-logo{font-family:var(--display);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:1.5rem;}.footer-logo span{color:var(--green);}
+.social-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.5rem;}
+.social-links a{color:var(--text3);font-size:1.25rem;transition:color .2s;text-decoration:none;}.social-links a:hover{color:var(--green);}
+.copyright{font-size:.75rem;color:var(--text3);}
+@media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;width:100%;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.5rem;gap:1.5rem;}.nav-links.open{display:flex;}.nav-toggle{display:block;}.project-top{grid-template-columns:1fr;}.project-id{display:none;}.findings-list{grid-template-columns:1fr 1fr;}.project-links{flex-direction:column;}}
+</style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Zaid<span>Pathan</span></a>
-      <button class="nav-toggle"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <header class="page-header">
-    <div class="container">
-      <h1>My Projects</h1>
-      <p>Practical projects demonstrating my skills in cybersecurity, penetration testing, and secure coding</p>
-    </div>
-  </header>
-
-<!-- Project Card -->
-<main class="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
-  <div class="project-card" style="text-align: center; max-width: 700px; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    
-    <!-- Project Icon & Title -->
-    <div class="project-image" style="font-size: 60px; color: #0077b6; margin-bottom: 10px;">
-      <i class="fas fa-university"></i>
-    </div>
-    <h3 style="margin-bottom: 20px; font-size: 26px; color: #333;">Fake Bank Portal</h3>
-
-    <!-- Project Description -->
-    <div class="project-description" style="margin-top: 15px; text-align: justify; color: #444; line-height: 1.6;">
-      <p>
-        The <strong>Fake Bank Portal</strong> is a simulated online banking application developed using Flask and SQLite. 
-        It replicates essential banking features such as user and admin login, account management, and password updates.
-      </p>
-      <p>
-        This project is intentionally designed with <strong>SQL injection</strong> vulnerabilities, making it a safe environment 
-        for practicing penetration testing and learning how real-world attacks work.
-      </p>
-      <p>
-        In addition, the portal also includes <strong>XSS (Cross-Site Scripting)</strong> scenarios to demonstrate how malicious 
-        scripts can be injected and executed within a web application. This allows hands-on experience in identifying and 
-        mitigating client-side security flaws.
-      </p>
-      <p>
-        By working on this project, I demonstrated my skills in web application development, database integration, and secure 
-        coding practices, while also applying offensive security techniques to showcase practical cybersecurity knowledge.
-      </p>
-    </div>
-
-    <!-- Centered View Project Button -->
-    <div style="margin-top: 20px; text-align: center;">
-      <a href="https://zaidpathan.pythonanywhere.com/login" class="project-link" target="_blank" 
-         style="display:inline-block; text-decoration:none; color:#fff; background:#0077b6; padding:12px 20px; border-radius:6px; transition:0.3s;">
-         View Project <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="b">[</span>ZP<span class="b">]</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
-</main>
+</nav>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="social-links">
-        <a href="https://github.com/zaidpathan-cs" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="page-tag">// projects.log</div>
+    <h1 class="page-title">Engagements<br>&amp; Tools</h1>
+    <p class="page-sub">Real assessments and purpose-built tools that demonstrate offensive security skills in practice.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="section-label">2 Projects</div>
+
+  <div class="project">
+    <div class="project-top">
+      <div>
+        <div class="project-type">Security Assessment</div>
+        <div class="project-name">Black-Box Pen Test<br>Postgraduate Portal</div>
+        <div class="project-scope">Sole tester &nbsp;·&nbsp; Full web app &nbsp;·&nbsp; OWASP Testing Guide</div>
       </div>
-      <p class="copyright">&copy; 2025 Zaid Pathan. All rights reserved.</p>
+      <div class="project-id">01</div>
     </div>
-  </footer>
+    <div class="project-divider"></div>
+    <p class="project-desc">Conducted a full black-box penetration test on a live academic portal. The engagement covered the complete attack lifecycle — passive &amp; active reconnaissance, vulnerability identification, exploitation, and stakeholder reporting. The most critical finding: <span class="hl">privilege escalation from a student account to professor-level access via broken access control</span>, which would have exposed the entire student record database in production.</p>
+    <div class="findings-title">Vulnerability Findings</div>
+    <div class="findings-list">
+      <div class="finding"><div class="finding-sev crit">Critical</div><div class="finding-name">Privilege Escalation</div></div>
+      <div class="finding"><div class="finding-sev crit">Critical</div><div class="finding-name">Broken Access Control</div></div>
+      <div class="finding"><div class="finding-sev high">High</div><div class="finding-name">Session Fixation</div></div>
+      <div class="finding"><div class="finding-sev high">High</div><div class="finding-name">Insecure File Upload</div></div>
+      <div class="finding"><div class="finding-sev info">Info</div><div class="finding-name">Server Banner Disclosure</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">OWASP Top 10</span><span class="tag">Burp Suite</span><span class="tag">Privilege Escalation</span>
+      <span class="tag">Access Control</span><span class="tag">Session Management</span><span class="tag">Pen Test Report</span>
+    </div>
+    <div class="note">Engagement conducted under authorized scope. Full report with PoC screenshots available on request.</div>
+  </div>
 
-  <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+  <div class="project">
+    <div class="project-top">
+      <div>
+        <div class="project-type">Lab Tool / Training Platform</div>
+        <div class="project-name">Deliberately Vulnerable<br>Bank Portal</div>
+        <div class="project-scope">Flask &nbsp;·&nbsp; SQLite &nbsp;·&nbsp; Python &nbsp;·&nbsp; Live on PythonAnywhere</div>
+      </div>
+      <div class="project-id">02</div>
+    </div>
+    <div class="project-divider"></div>
+    <p class="project-desc">Built a fully functional simulated banking application with <span class="hl">intentional security vulnerabilities</span> for use in penetration testing labs. The app replicates real banking features — user/admin login, account management, fund transfers — while deliberately exposing SQLi, XSS, and IDOR flaws. Used as a hands-on teaching tool to give students a safe environment to find, exploit, and document real vulnerabilities before working on live engagements.</p>
+    <div class="findings-title">Intentional Vulnerabilities</div>
+    <div class="findings-list">
+      <div class="finding"><div class="finding-sev crit">Built-In</div><div class="finding-name">SQL Injection</div></div>
+      <div class="finding"><div class="finding-sev crit">Built-In</div><div class="finding-name">Cross-Site Scripting</div></div>
+      <div class="finding"><div class="finding-sev high">Built-In</div><div class="finding-name">IDOR</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Flask</span><span class="tag">Python</span><span class="tag">SQLite</span>
+      <span class="tag">SQLi</span><span class="tag">XSS</span><span class="tag">IDOR</span><span class="tag">Training Lab</span>
+    </div>
+    <div class="project-links">
+      <a href="https://zaidpathan.pythonanywhere.com/login" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="https://github.com/zaidpathan-cs" target="_blank" rel="noopener" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
 
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+</div>
 
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link =>
-      link.addEventListener('click', () => navLinks.classList.remove('active'))
-    );
-
-    // Intersection Observer for animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.project-card').forEach(card => observer.observe(card));
-  </script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span>[</span>ZP<span>]</span></div>
+    <div class="social-links">
+      <a href="https://github.com/zaidpathan-cs" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/zaid-pathan-b27087333/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:zaidkhan.252000@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="copyright">© 2025 Zaid Pathan — All rights reserved.</p>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');obs.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.project').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
-
-
-
